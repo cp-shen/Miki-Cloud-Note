@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdf16930-d70f-4654-bf84-a42a70eaa065" name="Default" comment="" />
+    <list default="true" id="bdf16930-d70f-4654-bf84-a42a70eaa065" name="Default" comment="Merge branch 'master' of https://github.com/cp-shen/Miki-Cloud-Note&#10;&#10;# Conflicts:&#10;#&#9;out/production/Miki-Cloud-Note/View/View.fxml&#10;#&#9;src/View.fxml&#10;#&#9;src/View/View.fxml">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,13 +18,78 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="View.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1355">
-              <caret line="151" column="5" lean-forward="false" selection-start-line="151" selection-start-column="5" selection-end-line="151" selection-end-column="5" />
+            <state relative-caret-position="168">
+              <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="30" column="77" lean-forward="false" selection-start-line="30" selection-start-column="77" selection-end-line="30" selection-end-column="77" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1512545731627" expanded="true" signature="48625:48667" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="48625:48685" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="48625:48698" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="48625:48713" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="48748:51621" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="48761:51606" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="48815:49110" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="48834:49095" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="48897:49075" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="48937:49041" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="48958:49019" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="49160:49487" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="49179:49472" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="49274:49452" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="49314:49418" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="49335:49396" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="49538:49853" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="49557:49838" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="49640:49818" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="49680:49784" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="49701:49762" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="49896:50202" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="49915:50187" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="49989:50167" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="50029:50133" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="50050:50111" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="50253:50571" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="50272:50556" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="50358:50536" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="50398:50502" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="50419:50480" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="50606:50912" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="50625:50897" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="50699:50877" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="50739:50843" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="50760:50821" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="50964:51279" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="50983:51264" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="51066:51244" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="51106:51210" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="51127:51188" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="51327:51592" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="51346:51577" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="51379:51557" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="51419:51523" ph="..." />
+                <marker date="1512545731627" expanded="true" signature="51440:51501" ph="..." />
               </folding>
             </state>
           </provider>
@@ -60,38 +128,6 @@
                 <element signature="e#599#600#0" expanded="true" />
                 <element signature="e#633#634#0" expanded="true" />
                 <element signature="e#663#664#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notes/test2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#7;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#8;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#10;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#11;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#12;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#13;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#14;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#15;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#16;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#17;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,14 +177,14 @@
       </file>
       <file leaf-file-name="View.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/View.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
               <caret line="15" column="92" lean-forward="false" selection-start-line="15" selection-start-column="92" selection-end-line="15" selection-end-column="92" />
               <folding />
             </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
           </provider>
         </entry>
       </file>
@@ -203,6 +239,8 @@
         <option value="$PROJECT_DIR$/src/View/View.fxml" />
         <option value="$PROJECT_DIR$/src/View/View.java" />
         <option value="$PROJECT_DIR$/src/View/NoteEditor.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -408,7 +446,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -469,9 +506,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -658,7 +696,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3057325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -678,6 +716,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="196" y="134" width="1626" height="887" />
@@ -692,7 +731,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="123" />
-    <option name="LAST_COMMIT_MESSAGE" value="123" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/cp-shen/Miki-Cloud-Note&#10;&#10;# Conflicts:&#10;#&#9;out/production/Miki-Cloud-Note/View/View.fxml&#10;#&#9;src/View.fxml&#10;#&#9;src/View/View.fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/cp-shen/Miki-Cloud-Note&#10;&#10;# Conflicts:&#10;#&#9;out/production/Miki-Cloud-Note/View/View.fxml&#10;#&#9;src/View.fxml&#10;#&#9;src/View/View.fxml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -701,7 +741,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/editor.md/examples/page-break.html" />
     <entry file="file://$PROJECT_DIR$/src/editor.md/examples/resettings.html" />
     <entry file="file://$PROJECT_DIR$/src/editor.md/examples/readonly.html" />
     <entry file="file://$PROJECT_DIR$/src/editor.md/examples/sync-scrolling.html" />
@@ -806,13 +845,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/editor/a.html" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test2.html" />
     <entry file="file://$PROJECT_DIR$/src/test.html" />
     <entry file="file://$PROJECT_DIR$/src/View.fxml" />
@@ -820,29 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#7;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#8;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#10;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#11;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#12;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#13;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#14;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#15;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#16;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#17;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -867,14 +876,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/View.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="15" column="92" lean-forward="false" selection-start-line="15" selection-start-column="92" selection-end-line="15" selection-end-column="92" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Project-Proposal.md" />
@@ -928,11 +937,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1355">
-          <caret line="151" column="5" lean-forward="false" selection-start-line="151" selection-start-column="5" selection-end-line="151" selection-end-column="5" />
+        <state relative-caret-position="168">
+          <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="30" column="77" lean-forward="false" selection-start-line="30" selection-start-column="77" selection-end-line="30" selection-end-column="77" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1512545731627" expanded="true" signature="48625:48667" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="48625:48685" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="48625:48698" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="48625:48713" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="48748:51621" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="48761:51606" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="48815:49110" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="48834:49095" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="48897:49075" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="48937:49041" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="48958:49019" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="49160:49487" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="49179:49472" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="49274:49452" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="49314:49418" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="49335:49396" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="49538:49853" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="49557:49838" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="49640:49818" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="49680:49784" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="49701:49762" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="49896:50202" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="49915:50187" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="49989:50167" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="50029:50133" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="50050:50111" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="50253:50571" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="50272:50556" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="50358:50536" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="50398:50502" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="50419:50480" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="50606:50912" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="50625:50897" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="50699:50877" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="50739:50843" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="50760:50821" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="50964:51279" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="50983:51264" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="51066:51244" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="51106:51210" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="51127:51188" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="51327:51592" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="51346:51577" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="51379:51557" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="51419:51523" ph="..." />
+            <marker date="1512545731627" expanded="true" signature="51440:51501" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
