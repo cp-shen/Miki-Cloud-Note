@@ -50,7 +50,7 @@ A desktop cloud note application
 - [x] A javaFx Webview Integrated with web rich text editor
 - [x] Single note process. new, save, open, export
 - [x] Deal with multiple notes
-- [ ] One display view and multiple ditor windows
+- [ ] One display mainView and multiple ditor windows
 - [ ] Record the opened notes with URL
 - [ ] Communicate with the server
 - [ ] Specify a new file extension

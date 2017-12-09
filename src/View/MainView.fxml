@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.web.*?>
 
-<AnchorPane prefHeight="628.0" prefWidth="1034.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.View">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainView">
    <children>
       <BorderPane prefHeight="628.0" prefWidth="1034.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -36,14 +36,12 @@
                 <Menu mnemonicParsing="false" text="File">
                   <items>
                         <MenuItem mnemonicParsing="false" onAction="#handleNew" text="New" />
-                    <MenuItem mnemonicParsing="false" onAction="#handleSave" text="Save" />
                         <MenuItem mnemonicParsing="false" onAction="#handleOpen" text="Open" />
-                        <MenuItem mnemonicParsing="false" onAction="#handleExport" text="Export" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Open Editor" />
+                    <MenuItem mnemonicParsing="false" onAction="#handleShowEditor" text="Show Editor" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">

@@ -1,4 +1,4 @@
-import View.View;
+import View.MainView;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
@@ -17,14 +17,14 @@ public class Main extends Application{
     public void start(Stage primaryStage){
         try{
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("View/View.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("View/MainView.fxml"));
 
             primaryStage.setScene(new Scene(fxmlLoader.load()));
+            primaryStage.setTitle("Miki Cloud Note");
 
-            View view = fxmlLoader.getController();
-            view.setNotes(FXCollections.observableArrayList());
-            view.handleNew();
-            view.setPrimaryStage(primaryStage);
+            MainView mainView = fxmlLoader.getController();
+            mainView.setNotes(FXCollections.observableArrayList());
+            mainView.setPrimaryStage(primaryStage);
 
             primaryStage.show();
         }catch(IOException ex){

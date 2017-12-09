@@ -1,55 +1,100 @@
 package View;
 
 import Domain.Note;
-import javafx.scene.control.Tab;
+import javafx.fxml.FXML;
 import javafx.scene.web.WebView;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.jsoup.Jsoup;
+import org.jsoup.helper.W3CDom;
+import org.jsoup.nodes.Document;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.MalformedURLException;
-import java.util.List;
+import java.net.URISyntaxException;
 
 public class NoteEditor{
-
     private Note note;
+    @FXML
     private WebView webView;
+    private Stage editorStage;
 
-    WebView getWebView(){
-        return webView;
+    public void initialize(){ }
+
+    void setNote(Note note){
+        this.note = note;
     }
 
-    Note getNote(){
-        return note;
+    /**
+     * Set editor stage.
+     * @param editorStage the editor stage
+     *                    Used to pop up file chooser
+     */
+    void setEditorStage(Stage editorStage){
+        this.editorStage = editorStage;
     }
 
-    NoteEditor(View mainView, Note note){
+    void displayNoteInEditor(){
         try{
-            webView = new WebView();
-            tab = new Tab();
-            tab.textProperty().bindBidirectional(note.titleProperty());
-            this.note = note;
-
             if(note.getUrl() != null){
                 webView.getEngine().load(note.getUrl().toString());
             }else {
-                //a new note
+                //if is a new note
                 File editorFile = new File("editor/editor.html");
                 webView.getEngine().load(editorFile.toURI().toURL().toString());
             }
-
-            tab.setContent(webView);
-            tab.setOnClosed(event -> mainView.getNoteEditors().remove(this));
         }catch(MalformedURLException ex){
             ex.printStackTrace();
         }
     }
 
-    static NoteEditor selectByTab(List<NoteEditor> noteEditors, Tab tab){
-        for(NoteEditor noteEditor : noteEditors){
-            if(noteEditor.tab.equals(tab)){
-                return noteEditor;
+    @FXML
+    void handleSave(){
+        try{
+            //if is a new note
+            if(note.getUrl() == null){
+                handleExport();
+            }else{
+                org.w3c.dom.Document w3cDoc = webView.getEngine().getDocument();
+                Document jSoupDoc = Jsoup.parse(new W3CDom().asString(w3cDoc));
+                String contentH = jSoupDoc.outerHtml();
+
+                FileWriter fileWriter = new FileWriter(new File(note.getUrl().toURI()));
+                fileWriter.write(contentH);
+                fileWriter.flush();
             }
+        }catch(IOException | URISyntaxException ex){
+            ex.printStackTrace();
         }
-        return null;
     }
+
+    @FXML
+    private void handleExport(){
+        try{
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Export to Disk");
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("HTML","*.html"));
+
+            File target = fileChooser.showSaveDialog(editorStage);
+            if(target != null){
+                org.w3c.dom.Document w3cDoc = webView.getEngine().getDocument();
+                org.jsoup.nodes.Document jSoupDoc = Jsoup.parse(new W3CDom().asString(w3cDoc));
+                String contentH = jSoupDoc.outerHtml();
+
+                FileWriter fileWriter = new FileWriter(target);
+                fileWriter.write(contentH);
+                fileWriter.flush();
+
+                //if is a new note
+                if(note.getUrl() == null){
+                    note.setTitle(target.getName());
+                    note.setUrl(target.toURI().toURL());
+                }
+            }
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
+     }
 }
