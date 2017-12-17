@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Miki-Cloud-Note:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bdf16930-d70f-4654-bf84-a42a70eaa065" name="Default" comment="Merge branch 'master' of https://github.com/cp-shen/Miki-Cloud-Note&#10;&#10;# Conflicts:&#10;#&#9;out/production/Miki-Cloud-Note/View/View.fxml&#10;#&#9;src/View.fxml&#10;#&#9;src/View/View.fxml">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/MainView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/NoteEditor.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/App/Utility/EditorOperator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/App/Utility/PdfMaker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/jhonnymertz/wkhtmltopdf/wrapper/Pdf.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/jhonnymertz/wkhtmltopdf/wrapper/configurations/WrapperConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/jhonnymertz/wkhtmltopdf/wrapper/configurations/XvfbConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/jhonnymertz/wkhtmltopdf/wrapper/page/Page.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/jhonnymertz/wkhtmltopdf/wrapper/page/PageType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/jhonnymertz/wkhtmltopdf/wrapper/params/Param.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/jhonnymertz/wkhtmltopdf/wrapper/params/Params.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/jhonnymertz/wkhtmltopdf/wrapper/params/Symbol.java" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jsoup_1_11_2.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
@@ -11,17 +24,22 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dev-Log.md" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Miki-Cloud-Note.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Project-Proposal.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/notes/test2.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Miki-Cloud-Note/Domain/Note.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Miki-Cloud-Note/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/View/View.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/View/View.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/out/production/Miki-Cloud-Note/View/View.fxml" afterPath="$PROJECT_DIR$/src/View/MainView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dev-Log.md" afterPath="$PROJECT_DIR$/Dev-Log.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/NoteEditor.java" afterPath="$PROJECT_DIR$/src/View/NoteEditor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/立项申请报告.md" afterPath="$PROJECT_DIR$/立项申请报告.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/立项申请报告.md.html" afterPath="$PROJECT_DIR$/立项申请报告.md.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Domain/Note.java" afterPath="$PROJECT_DIR$/src/App/Model/Note.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/App/Main.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/MainView.fxml" afterPath="$PROJECT_DIR$/src/App/View/MainView.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/MainView.java" afterPath="$PROJECT_DIR$/src/App/View/MainView.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/NoteEditor.fxml" afterPath="$PROJECT_DIR$/src/App/View/NoteEditor.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/NoteEditor.java" afterPath="$PROJECT_DIR$/src/App/View/NoteEditor.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/立项申请报告.md" afterPath="$PROJECT_DIR$/doc/立项申请报告.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/立项申请报告.md.html" afterPath="$PROJECT_DIR$/doc/立项申请报告.md.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/立项申请报告.md.pdf" afterPath="$PROJECT_DIR$/doc/立项申请报告.md.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,15 +50,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Miki_Cloud_Note$Main.coverage" NAME="Main Coverage Results" MODIFIED="1512015768964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Miki_Cloud_Note$Main.coverage" NAME="Main Coverage Results" MODIFIED="1512815000961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/View/MainView.java">
+      <file leaf-file-name="NoteEditor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App/View/NoteEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="77" column="40" lean-forward="false" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
+            <state relative-caret-position="244">
+              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,150 +66,119 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FXMLLoader.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <file leaf-file-name="NoteEditor.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App/View/NoteEditor.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51366">
-              <caret line="2600" column="0" lean-forward="false" selection-start-line="2600" selection-start-column="0" selection-end-line="2600" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Reflection.class" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/jre/lib/rt.jar!/sun/reflect/Reflection.class">
+      <file leaf-file-name="Note.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App/Model/Note.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="168">
+              <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="GistService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/service/GistService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1470">
-              <caret line="70" column="77" lean-forward="false" selection-start-line="70" selection-start-column="77" selection-end-line="70" selection-end-column="77" />
+            <state relative-caret-position="152">
+              <caret line="276" column="0" lean-forward="true" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
               <folding>
-                <marker date="1512786456788" expanded="true" signature="58556:58782" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="58556:58800" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="58556:58813" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="58556:58828" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="58684:58765" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="58863:61736" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="58876:61721" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="58930:59225" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="58949:59210" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="59012:59190" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="59052:59156" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="59073:59134" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="59275:59602" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="59294:59587" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="59389:59567" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="59429:59533" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="59450:59511" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="59653:59968" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="59672:59953" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="59755:59933" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="59795:59899" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="59816:59877" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="60011:60317" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="60030:60302" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="60104:60282" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="60144:60248" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="60165:60226" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="60368:60686" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="60387:60671" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="60473:60651" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="60513:60617" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="60534:60595" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="60721:61027" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="60740:61012" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="60814:60992" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="60854:60958" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="60875:60936" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="61079:61394" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="61098:61379" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="61181:61359" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="61221:61325" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="61242:61303" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="61442:61707" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="61461:61692" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="61494:61672" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="61534:61638" ph="..." />
-                <marker date="1512786456788" expanded="true" signature="61555:61616" ph="..." />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoteEditor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/NoteEditor.java">
+      <file leaf-file-name="GitHubService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/service/GitHubService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="103" column="16" lean-forward="true" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
+              <folding>
+                <element signature="e#3455#3456#0" expanded="true" />
+                <element signature="e#3475#3476#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GistFile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/GistFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="367">
+              <caret line="73" column="20" lean-forward="false" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+              <caret line="21" column="59" lean-forward="false" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App/View/MainView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="144" column="44" lean-forward="false" selection-start-line="144" selection-start-column="44" selection-end-line="144" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gist.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/Gist.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#574#575#0" expanded="true" />
-                <element signature="e#606#607#0" expanded="true" />
+                <element signature="e#1399#1400#0" expanded="true" />
+                <element signature="e#1421#1422#0" expanded="true" />
+                <element signature="e#4389#4390#0" expanded="true" />
+                <element signature="e#4408#4409#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="MainView.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/MainView.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="92" lean-forward="false" selection-start-line="15" selection-start-column="92" selection-end-line="15" selection-end-column="92" />
-              <folding />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/App/View/MainView.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NoteEditor.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/NoteEditor.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="26" column="43" lean-forward="false" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Miki-Cloud-Note.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Miki-Cloud-Note.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="346">
+              <caret line="47" column="65" lean-forward="false" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
+              <folding>
+                <marker date="1513521344746" expanded="true" signature="1314:1447" ph="..." />
+                <marker date="1513521344746" expanded="true" signature="1627:1963" ph="..." />
+                <marker date="1513521344746" expanded="true" signature="1659:1931" ph="..." />
+                <marker date="1513521344746" expanded="true" signature="2045:3207" ph="..." />
+                <marker date="1513521344746" expanded="true" signature="2097:3191" ph="..." />
+                <marker date="1513521344746" expanded="true" signature="2119:3168" ph="..." />
+                <marker date="1513521344746" expanded="true" signature="2178:2725" ph="..." />
+                <marker date="1513521344746" expanded="true" signature="2204:2701" ph="..." />
+                <marker date="1513521344746" expanded="true" signature="2784:3145" ph="..." />
+                <marker date="1513521344746" expanded="true" signature="2810:3121" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -202,9 +189,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
+        <option value="FxmlFile" />
         <option value="HTML File" />
         <option value="Class" />
-        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -212,7 +199,14 @@
     <findStrings>
       <find>State</find>
       <find>il</find>
+      <find>setJavaScriptEnabled</find>
+      <find>URL</find>
+      <find>i</find>
+      <find>HttpComponents</find>
     </findStrings>
+    <dirStrings>
+      <dir>C:\Users\cp_shen\Documents\GitHub\Miki-Cloud-Note\src\org\eclipse\egit\github\core</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -239,25 +233,44 @@
         <option value="$PROJECT_DIR$/src/View.java" />
         <option value="$PROJECT_DIR$/src/test.html" />
         <option value="$PROJECT_DIR$/src/View.fxml" />
-        <option value="$PROJECT_DIR$/notes/test2.html" />
         <option value="$PROJECT_DIR$/src/View/EditorView.java" />
         <option value="$PROJECT_DIR$/src/View/NoteEditorView.java" />
         <option value="$PROJECT_DIR$/src/Domain/Note.java" />
         <option value="$PROJECT_DIR$/src/View/View.fxml" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/View/NoteEditor.fxml" />
         <option value="$PROJECT_DIR$/src/View/View.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/View/NoteEditor.java" />
+        <option value="$PROJECT_DIR$/notes/test.html" />
+        <option value="$PROJECT_DIR$/editor/editor.html" />
+        <option value="$PROJECT_DIR$/notes/test1.html" />
+        <option value="$PROJECT_DIR$/notes/test2.html" />
+        <option value="$PROJECT_DIR$/notes/test3.html" />
+        <option value="$PROJECT_DIR$/notes/test4.html" />
+        <option value="$PROJECT_DIR$/src/Utility/EditorOperator.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/View/MainView.java" />
+        <option value="$PROJECT_DIR$/src/Utility/PDFMaker.java" />
+        <option value="$PROJECT_DIR$/src/Utility/PdfMaker.java" />
+        <option value="$PROJECT_DIR$/src/View/NoteEditor.java" />
+        <option value="$PROJECT_DIR$/src/org/eclipse/mylyn/internal/github/core/GitHub.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Test/GistViaOAuthToken.java" />
+        <option value="$PROJECT_DIR$/src/Utility/core/client/GitHubClient.java" />
+        <option value="$PROJECT_DIR$/src/org/eclipse/egit/github/core/client/GitHubClient.java" />
+        <option value="$PROJECT_DIR$/src/org/eclipse/egit/github/core/util/Base64.java" />
+        <option value="$PROJECT_DIR$/src/App/Main.java" />
+        <option value="$PROJECT_DIR$/src/App/View/NoteEditor.java" />
+        <option value="$PROJECT_DIR$/src/App/View/MainView.fxml" />
+        <option value="$PROJECT_DIR$/src/App/View/MainView.java" />
+        <option value="$PROJECT_DIR$/src/App/Model/Note.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="1032" />
-    <option name="height" value="561" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -456,7 +469,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -468,29 +480,40 @@
             <path>
               <item name="Miki-Cloud-Note" type="b2602c69:ProjectViewProjectNode" />
               <item name="Miki-Cloud-Note" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Miki-Cloud-Note" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Miki-Cloud-Note" type="462c0819:PsiDirectoryNode" />
-              <item name="notes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Miki-Cloud-Note" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Miki-Cloud-Note" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Miki-Cloud-Note" type="b2602c69:ProjectViewProjectNode" />
               <item name="Miki-Cloud-Note" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Domain" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Miki-Cloud-Note" type="b2602c69:ProjectViewProjectNode" />
               <item name="Miki-Cloud-Note" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Miki-Cloud-Note" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Miki-Cloud-Note" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Miki-Cloud-Note" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Miki-Cloud-Note" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Miki-Cloud-Note" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Miki-Cloud-Note" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Miki-Cloud-Note" type="b2602c69:ProjectViewProjectNode" />
@@ -501,27 +524,29 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="C:/Program Files/Java/jsoup-1.11.2.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Gitskarios" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="add_unversioned_files" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cp_shen\Documents\GitHub\Miki-Cloud-Note\doc" />
       <recent name="C:\Users\cp_shen\Documents\GitHub\Miki-Cloud-Note\src\View" />
       <recent name="C:\Users\cp_shen\Documents\GitHub\Miki-Cloud-Note" />
       <recent name="C:\Users\cp_shen\Documents\GitHub\Miki-Cloud-Note\src" />
       <recent name="C:\Users\cp_shen\Documents\GitHub\Miki-Cloud-Note\editor" />
-      <recent name="C:\Users\cp_shen\Documents\GitHub\Miki-Cloud-Note\html" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cp_shen\Documents\GitHub\Miki-Cloud-Note\src\Test" />
       <recent name="C:\Users\cp_shen\Documents\GitHub\Miki-Cloud-Note\src" />
       <recent name="C:\Users\cp_shen\Documents\GitHub\Miki-Cloud-Note" />
       <recent name="C:\Users\cp_shen\Documents\jMonkeyEngine\Miki-Cloud-Note\src" />
@@ -540,9 +565,28 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Main">
+    <configuration name="GistViaOAuthToken" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="Test.GistViaOAuthToken" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Miki-Cloud-Note" />
+      <envs />
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="App.Main" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -635,9 +679,14 @@
       <properties />
       <listeners />
     </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="Application.GistViaOAuthToken" />
+    </list>
     <recent_temporary>
-      <list size="1">
+      <list size="2">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="Application.GistViaOAuthToken" />
       </list>
     </recent_temporary>
   </component>
@@ -676,7 +725,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512543754151</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Merge branch 'master' of https://github.com/cp-shen/Miki-Cloud-Note&#10;&#10;# Conflicts:&#10;#&#9;out/production/Miki-Cloud-Note/View/View.fxml&#10;#&#9;src/View.fxml&#10;#&#9;src/View/View.fxml">
+      <created>1512787201862</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1512787201862</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -685,19 +741,22 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="86" y="346" width="1620" height="887" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3057325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1687898" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18854167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16666667" sideWeight="0.596424" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16666667" sideWeight="0.403576" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -710,11 +769,9 @@
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="196" y="134" width="1620" height="887" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Log Manager" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -728,291 +785,426 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/editor.md/examples/index.html" />
-    <entry file="file://$PROJECT_DIR$/src/editor.md/examples/use-zepto.html" />
-    <entry file="file://$PROJECT_DIR$/src/editor.md/examples/use-seajs.html" />
-    <entry file="file://$PROJECT_DIR$/src/editor.md/examples/use-requirejs.html" />
-    <entry file="file://$PROJECT_DIR$/src/editor.md/examples/toolbar-auto-fixed.html" />
-    <entry file="file://$PROJECT_DIR$/src/editor.md/examples/toc.html" />
-    <entry file="file://$PROJECT_DIR$/src/editor.md/examples/themes.html" />
-    <entry file="file://$PROJECT_DIR$/src/editor.md/examples/test.md" />
-    <entry file="file://$PROJECT_DIR$/src/editor.md/examples/task-lists.html" />
-    <entry file="file://$PROJECT_DIR$/src/editor.md/examples/full.html" />
-    <entry file="file://$PROJECT_DIR$/src/wangEditor/src/js/text/index.js" />
-    <entry file="file://$PROJECT_DIR$/src/editor/README.md" />
-    <entry file="file://$PROJECT_DIR$/src/editor/docs/markdown.html" />
-    <entry file="file://$PROJECT_DIR$/src/editor/docs/index.html" />
-    <entry file="file://$PROJECT_DIR$/src/wangEditor/example/index.html" />
-    <entry file="file://$PROJECT_DIR$/editor/wangEditor-3.0.15/src/js/text/index.js">
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/CommitStatus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="168">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../test/test.iml">
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/CommitUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/gbapi-1.8.0/ext/gson-2.3.1.jar!/com/google/gson/JsonElement.class" />
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/service/CollaboratorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/gbapi-1.8.0/ext/gson-2.3.1.jar!/com/google/gson/reflect/TypeToken.class" />
+    <entry file="jar://C:/Program Files/Java/gbapi-1.8.0/ext/gson-2.3.1.jar!/com/google/gson/JsonSerializer.class" />
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/Blob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/gbapi-1.8.0/ext/gson-2.3.1.jar!/com/google/gson/JsonDeserializationContext.class" />
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/client/DateFormatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/jsoup_1_11_2.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/gson_2_3_1.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/commons_lang3_3_7.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/commons_io_2_6.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/annotations_java8.xml" />
+    <entry file="file://$PROJECT_DIR$/src/com/github/jhonnymertz/wkhtmltopdf/wrapper/Pdf.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
-          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/Project-Proposal.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/editor.md/css/editormd.min.css" />
-    <entry file="file://$PROJECT_DIR$/src/editor.md/examples/js/jquery.min.js" />
-    <entry file="file://$PROJECT_DIR$/src/jquery.min.js" />
-    <entry file="file://$PROJECT_DIR$/src/editor2.html" />
-    <entry file="file://$PROJECT_DIR$/editor/wangEditor-3.0.15/.eslintignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/Miki-Cloud-Note/editor/editor.html" />
-    <entry file="file://$PROJECT_DIR$/src/editor/wangEditor-3.0.15/a.html" />
-    <entry file="file://$PROJECT_DIR$/editor/wangEditor-3.0.15/src/less/common.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/wangEditor-3.0.15/release/wangEditor.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test3.html" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/beans/property/ReadOnlyObjectPropertyBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/web/WebEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="1274" column="9" lean-forward="true" selection-start-line="1274" selection-start-column="9" selection-end-line="1274" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/beans/property/ReadOnlyObjectWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/editor/a.html" />
-    <entry file="file://$PROJECT_DIR$/src/test2.html" />
-    <entry file="file://$PROJECT_DIR$/src/test.html" />
-    <entry file="file://$PROJECT_DIR$/src/View.fxml" />
-    <entry file="file://$PROJECT_DIR$/notes/test2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/Note.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#373#374#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#475#476#0" expanded="true" />
-            <element signature="e#519#520#0" expanded="true" />
-            <element signature="e#547#548#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Project-Proposal.md" />
-    <entry file="file://$PROJECT_DIR$/editor/editor.html">
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="29" column="7" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/application/Application.java">
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3927">
-          <caret line="222" column="23" lean-forward="false" selection-start-line="222" selection-start-column="23" selection-end-line="222" selection-end-column="23" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/preferred-vcs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="70" column="77" lean-forward="false" selection-start-line="70" selection-start-column="77" selection-end-line="70" selection-end-column="77" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1512786456788" expanded="true" signature="58556:58782" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="58556:58800" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="58556:58813" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="58556:58828" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="58684:58765" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="58863:61736" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="58876:61721" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="58930:59225" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="58949:59210" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="59012:59190" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="59052:59156" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="59073:59134" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="59275:59602" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="59294:59587" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="59389:59567" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="59429:59533" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="59450:59511" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="59653:59968" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="59672:59953" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="59755:59933" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="59795:59899" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="59816:59877" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="60011:60317" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="60030:60302" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="60104:60282" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="60144:60248" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="60165:60226" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="60368:60686" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="60387:60671" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="60473:60651" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="60513:60617" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="60534:60595" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="60721:61027" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="60740:61012" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="60814:60992" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="60854:60958" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="60875:60936" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="61079:61394" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="61098:61379" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="61181:61359" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="61221:61325" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="61242:61303" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="61442:61707" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="61461:61692" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="61494:61672" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="61534:61638" ph="..." />
-            <marker date="1512786456788" expanded="true" signature="61555:61616" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="68561:68578" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="68561:68596" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="68561:68609" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="68561:68624" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="68659:71566" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="68672:71551" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="68726:69066" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="68745:69051" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="68853:69031" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="68893:68997" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="68914:68975" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="69116:69443" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="69135:69428" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="69230:69408" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="69270:69374" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="69291:69352" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="69494:69807" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="69513:69792" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="69594:69772" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="69634:69738" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="69655:69716" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="69850:70156" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="69869:70141" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="69943:70121" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="69983:70087" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="70004:70065" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="70207:70525" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="70226:70510" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="70312:70490" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="70352:70456" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="70373:70434" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="70560:70866" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="70579:70851" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="70653:70831" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="70693:70797" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="70714:70775" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="70918:71224" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="70937:71209" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="71011:71189" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="71051:71155" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="71072:71133" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="71272:71537" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="71291:71522" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="71324:71502" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="71364:71468" ph="..." />
+            <marker date="1513521710451" expanded="true" signature="71385:71446" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Miki-Cloud-Note.iml">
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/lib.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/NoteEditor.fxml">
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/Comment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/jre/lib/rt.jar!/sun/reflect/Reflection.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="168">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/service/CommitService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51366">
-          <caret line="2600" column="0" lean-forward="false" selection-start-line="2600" selection-start-column="0" selection-end-line="2600" selection-end-column="0" />
+        <state relative-caret-position="-21">
+          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/NoteEditor.java">
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.3.1.jar!/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/Authorization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1874">
+          <caret line="152" column="16" lean-forward="false" selection-start-line="152" selection-start-column="16" selection-end-line="152" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/service/OAuthService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#574#575#0" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="false" />
+            <element signature="e#1367#1368#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainView.fxml">
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/client/IGitHubConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="92" lean-forward="false" selection-start-line="15" selection-start-column="92" selection-end-line="15" selection-end-column="92" />
+        <state relative-caret-position="297">
+          <caret line="42" column="11" lean-forward="false" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/GistChangeStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/Download.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/GollumPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/GistRevision.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1019">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/client/GitHubClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1360">
+          <caret line="582" column="0" lean-forward="false" selection-start-line="582" selection-start-column="0" selection-end-line="582" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#4763#4764#0" expanded="false" />
+            <element signature="e#4784#4785#0" expanded="false" />
+            <element signature="e#4891#4892#0" expanded="false" />
+            <element signature="e#4932#4933#0" expanded="false" />
+            <element signature="e#10318#10319#0" expanded="false" />
+            <element signature="e#10336#10337#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/GistViaOAuthToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="63" column="67" lean-forward="false" selection-start-line="63" selection-start-column="67" selection-end-line="63" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/PrintRepos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="47" column="58" lean-forward="true" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/PageCommits.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="39" column="6" lean-forward="true" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/wangEditor-3.0.15/example/icomoon/Read Me.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="96" lean-forward="false" selection-start-line="6" selection-start-column="96" selection-end-line="6" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/util/Base64.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/Gist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+          <folding>
+            <element signature="e#1399#1400#0" expanded="true" />
+            <element signature="e#1421#1422#0" expanded="true" />
+            <element signature="e#4389#4390#0" expanded="true" />
+            <element signature="e#4408#4409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/View/MainView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="144" column="44" lean-forward="false" selection-start-line="144" selection-start-column="44" selection-end-line="144" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/View/MainView.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="43" lean-forward="false" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+        <state relative-caret-position="346">
+          <caret line="47" column="65" lean-forward="false" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
+          <folding>
+            <marker date="1513521344746" expanded="true" signature="1314:1447" ph="..." />
+            <marker date="1513521344746" expanded="true" signature="1627:1963" ph="..." />
+            <marker date="1513521344746" expanded="true" signature="1659:1931" ph="..." />
+            <marker date="1513521344746" expanded="true" signature="2045:3207" ph="..." />
+            <marker date="1513521344746" expanded="true" signature="2097:3191" ph="..." />
+            <marker date="1513521344746" expanded="true" signature="2119:3168" ph="..." />
+            <marker date="1513521344746" expanded="true" signature="2178:2725" ph="..." />
+            <marker date="1513521344746" expanded="true" signature="2204:2701" ph="..." />
+            <marker date="1513521344746" expanded="true" signature="2784:3145" ph="..." />
+            <marker date="1513521344746" expanded="true" signature="2810:3121" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/View/NoteEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/View/NoteEditor.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainView.java">
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/GistFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="77" column="40" lean-forward="false" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
+        <state relative-caret-position="367">
+          <caret line="73" column="20" lean-forward="false" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="21" column="59" lean-forward="false" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/Model/Note.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/service/GitHubService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="103" column="16" lean-forward="true" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
+          <folding>
+            <element signature="e#3455#3456#0" expanded="true" />
+            <element signature="e#3475#3476#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/eclipse/egit/github/core/service/GistService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="276" column="0" lean-forward="true" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1025,6 +1217,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>unnamed</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1048,7 +1241,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>jsoup-1.11.2</last-edited>
+          <last-edited>gson-2.3.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1096,7 +1289,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>jsoup-1.11.2</last-edited>
+          <last-edited>lib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>Dev-Log</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(203, 203, 203); background-color: rgb(34, 34, 34); overflow: auto; }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(162, 162, 162); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: white; }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(162, 162, 162); border-color: rgb(75, 75, 75); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(75, 75, 75); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(75, 75, 75); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(54, 54, 54); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(44, 44, 44); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(75, 75, 75) rgb(75, 75, 75) rgb(60, 60, 60); border-image: initial; background-color: rgb(54, 54, 54); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); overflow: scroll; }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { background-color: rgb(255, 255, 255); border-top: 1px solid rgb(204, 204, 204); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; background-color: rgba(0, 0, 0, 0.0392157); border-radius: 3px; }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border-radius: 3px; }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; background-color: rgb(252, 252, 252); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-image: initial; border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item-checkbox { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+.line-number.bracket-matcher {
+  background-color: #777;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #222;
+  color: #cbcbcb;
+}
+pre.editor-colors .wrap-guide {
+  background-color: #2d2d2d;
+}
+pre.editor-colors .invisible-character {
+  color: #4e4e4e;
+}
+pre.editor-colors .indent-guide {
+  color: #272727;
+}
+pre.editor-colors .gutter {
+  background-color: #222;
+  color: #4e4e4e;
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  background-color: transparent;
+  color: #6e6e6e;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  color: #6e6e6e;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #6e6e6e;
+}
+pre.editor-colors .invisible {
+  color: #cbcbcb;
+}
+pre.editor-colors .cursor {
+  color: white;
+}
+pre.editor-colors .selection .region {
+  background-color: #484848;
+}
+pre.editor-colors .search-results .syntax--marker .region {
+  background-color: transparent;
+  border: 1px solid #6e6e6e;
+}
+pre.editor-colors .search-results .syntax--marker.current-result .region {
+  border: 1px solid white;
+}
+.syntax--comment {
+  color: #6e6e6e;
+}
+.syntax--entity.syntax--name.syntax--type {
+  color: #f99157;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  color: #99cc99;
+}
+.syntax--keyword {
+  color: #cc99cc;
+}
+.syntax--keyword.syntax--control {
+  color: #cc99cc;
+}
+.syntax--keyword.syntax--operator {
+  color: #cbcbcb;
+}
+.syntax--keyword.syntax--operator.syntax--comparison,
+.syntax--keyword.syntax--operator.syntax--logical {
+  color: #cc99cc;
+}
+.syntax--keyword.syntax--other.syntax--special-method {
+  color: #6699cc;
+}
+.syntax--keyword.syntax--other.syntax--unit {
+  color: #ffcc66;
+}
+.syntax--storage {
+  color: #f2777a;
+}
+.syntax--constant {
+  color: #ffcc66;
+}
+.syntax--constant.syntax--character.syntax--escape {
+  color: #66cccc;
+}
+.syntax--constant.syntax--numeric {
+  color: #ffcc66;
+}
+.syntax--constant.syntax--other.syntax--color {
+  color: #66cccc;
+}
+.syntax--constant.syntax--other.syntax--symbol {
+  color: #99cc99;
+}
+.syntax--variable {
+  color: #f2777a;
+}
+.syntax--variable.syntax--interpolation {
+  color: #ee484c;
+}
+.syntax--variable.syntax--parameter.syntax--function {
+  color: #cbcbcb;
+}
+.syntax--invalid.syntax--illegal {
+  background-color: #f2777a;
+  color: #222;
+}
+.syntax--string {
+  color: #99cc99;
+}
+.syntax--string.syntax--regexp {
+  color: #66cccc;
+}
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded {
+  color: #ffcc66;
+}
+.syntax--string.syntax--other.syntax--link {
+  color: #f2777a;
+}
+.syntax--punctuation.syntax--definition.syntax--comment {
+  color: #6e6e6e;
+}
+.syntax--punctuation.syntax--definition.syntax--string,
+.syntax--punctuation.syntax--definition.syntax--variable,
+.syntax--punctuation.syntax--definition.syntax--parameters,
+.syntax--punctuation.syntax--definition.syntax--array {
+  color: #cbcbcb;
+}
+.syntax--punctuation.syntax--definition.syntax--heading,
+.syntax--punctuation.syntax--definition.syntax--identity {
+  color: #6699cc;
+}
+.syntax--punctuation.syntax--definition.syntax--bold {
+  color: #f99157;
+  font-style: bold;
+}
+.syntax--punctuation.syntax--definition.syntax--italic {
+  color: #cc99cc;
+  font-style: italic;
+}
+.syntax--punctuation.syntax--section.syntax--embedded {
+  color: #ee7b7e;
+}
+.syntax--support.syntax--class {
+  color: #f99157;
+}
+.syntax--support.syntax--function {
+  color: #66cccc;
+}
+.syntax--support.syntax--function.syntax--any-method {
+  color: #6699cc;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #6699cc;
+}
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class {
+  color: #f99157;
+}
+.syntax--entity.syntax--name.syntax--section {
+  color: #6699cc;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #f2777a;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #ffcc66;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
+  color: #6699cc;
+}
+.syntax--meta.syntax--class {
+  color: #cbcbcb;
+}
+.syntax--meta.syntax--link {
+  color: #ffcc66;
+}
+.syntax--meta.syntax--require {
+  color: #6699cc;
+}
+.syntax--meta.syntax--selector {
+  color: #cc99cc;
+}
+.syntax--meta.syntax--separator {
+  background-color: #4e4e4e;
+  color: #cbcbcb;
+}
+.syntax--none {
+  color: #cbcbcb;
+}
+.syntax--markup.syntax--bold {
+  color: #ffcc66;
+  font-style: bold;
+}
+.syntax--markup.syntax--changed {
+  color: #cc99cc;
+}
+.syntax--markup.syntax--deleted {
+  color: #f2777a;
+}
+.syntax--markup.syntax--italic {
+  color: #cc99cc;
+  font-style: italic;
+}
+.syntax--markup.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+  color: #6699cc;
+}
+.syntax--markup.syntax--inserted {
+  color: #99cc99;
+}
+.syntax--markup.syntax--list {
+  color: #f2777a;
+}
+.syntax--markup.syntax--quote {
+  color: #ffcc66;
+}
+.syntax--markup.syntax--raw.syntax--inline {
+  color: #99cc99;
+}
+.syntax--markup.syntax--link {
+  color: #cc99cc;
+}
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+}
+.syntax--source.syntax--gfm .syntax--markup.syntax--heading {
+  color: #99cc99;
+}
+</style>
+  </head>
+  <body class='markdown-preview' data-use-github-style><h1 id="curriculum-requirements-of-the-project">Curriculum Requirements of The Project</h1>
+<h3 id="compulsory-requirements">Compulsory Requirements</h3>
+<ol>
+<li>Use Java SE</li>
+<li>Client with GUI and Server</li>
+<li>Real time interation using network</li>
+<li>Multi-thread</li>
+<li>File I/O</li>
+</ol>
+<h3 id="alternatives">Alternatives</h3>
+<ol>
+<li>GUI with MenuBar, ToolBar, StatusBar</li>
+<li>Picture drawing</li>
+<li>DataBase</li>
+<li>Vedio and Audio effect</li>
+<li>Export data as Excel or PDF File</li>
+<li>Others permitted</li>
+</ol>
+<hr>
+<h1 id="my-project">My Project</h1>
+<h3 id="a-brief-introduction-miki-cloud-note">A Brief Introduction - Miki Cloud Note</h3>
+<p>A desktop cloud note application</p>
+<h3 id="dependents">Dependents</h3>
+<ol>
+<li>wangEditor</li>
+<li>javafx</li>
+<li>JGit</li>
+<li>jsoup</li>
+<li>wkhtmltopdf</li>
+<li>wkhtmltopdf java wrapper</li>
+</ol>
+<h3 id="function-features">Function Features</h3>
+<ol>
+<li>Integrated with rich text editor, which is open source and web based</li>
+<li>Cloud sync with server using git</li>
+<li>Version control using git</li>
+<li>PDF convertion</li>
+</ol>
+<h3>Developing Schedule</h3>
+<ul>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   A javaFx Webview Integrated with web rich text editor
+</label></li>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   Single note process. new, save, open, export
+</label></li>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   Deal with multiple notes
+</label></li>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   One display mainView and multiple editor windows
+</label></li>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   convert note to pdf file and export it
+</label></li>
+<li><label>
+  <input class="task-list-item-checkbox" type="checkbox">
+   Communicate with the server using git
+</label></li>
+<li><label>
+  <input class="task-list-item-checkbox" type="checkbox">
+   Record the opened notes with URL
+</label></li>
+</ul>
+<h3 id="code-log">Code Log</h3>
+<ul>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   right after load, <code>getEngine.getDocument() == null</code><pre class="editor-colors lang-java"><div class="line"><span class="syntax--source syntax--java"><span>&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--java"><span>final</span></span><span>&nbsp;</span><span class="syntax--meta syntax--definition syntax--variable syntax--java"><span class="syntax--storage syntax--type syntax--java"><span>WebView</span></span><span>&nbsp;</span><span class="syntax--variable syntax--other syntax--definition syntax--java"><span>webView</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--java"><span>=</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--control syntax--new syntax--java"><span>new</span></span><span>&nbsp;</span><span class="syntax--meta syntax--function-call syntax--java"><span class="syntax--entity syntax--name syntax--function syntax--java"><span>WebView</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--java"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--java"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--java"><span>;</span></span></span></div><div class="line"><span class="syntax--source syntax--java"><span>&nbsp;&nbsp;</span><span class="syntax--storage syntax--modifier syntax--java"><span>final</span></span><span>&nbsp;</span><span class="syntax--meta syntax--definition syntax--variable syntax--java"><span class="syntax--storage syntax--type syntax--java"><span>WebEngine</span></span><span>&nbsp;</span><span class="syntax--variable syntax--other syntax--definition syntax--java"><span>webEngine</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--java"><span>=</span></span><span>&nbsp;</span><span class="syntax--variable syntax--other syntax--object syntax--java"><span>webView</span></span><span class="syntax--meta syntax--method-call syntax--java"><span class="syntax--punctuation syntax--separator syntax--period syntax--java"><span>.</span></span><span class="syntax--entity syntax--name syntax--function syntax--java"><span>getEngine</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--java"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--java"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--java"><span>;</span></span></span></div><div class="line"><span class="syntax--source syntax--java"><span>&nbsp;&nbsp;</span><span class="syntax--variable syntax--other syntax--object syntax--java"><span>webEngine</span></span><span class="syntax--meta syntax--method-call syntax--java"><span class="syntax--punctuation syntax--separator syntax--period syntax--java"><span>.</span></span><span class="syntax--entity syntax--name syntax--function syntax--java"><span>getLoadWorker</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--java"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--java"><span>)</span></span><span class="syntax--punctuation syntax--separator syntax--period syntax--java"><span>.</span></span><span class="syntax--entity syntax--name syntax--function syntax--java"><span>stateProperty</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--java"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--java"><span>)</span></span><span class="syntax--punctuation syntax--separator syntax--period syntax--java"><span>.</span></span><span class="syntax--entity syntax--name syntax--function syntax--java"><span>addListener</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--java"><span>(</span></span><span class="syntax--punctuation syntax--bracket syntax--round syntax--java"><span>(</span></span><span>observable</span><span class="syntax--punctuation syntax--separator syntax--delimiter syntax--java"><span>,</span></span><span>&nbsp;oldState</span><span class="syntax--punctuation syntax--separator syntax--delimiter syntax--java"><span>,</span></span><span>&nbsp;newState</span><span class="syntax--punctuation syntax--bracket syntax--round syntax--java"><span>)</span></span><span>&nbsp;</span><span class="syntax--storage syntax--type syntax--function syntax--arrow syntax--java"><span>-&gt;</span></span><span>&nbsp;</span><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--bracket syntax--curly syntax--java"><span>{</span></span></span></span></div><div class="line"><span class="syntax--source syntax--java"><span class="syntax--meta syntax--method-call syntax--java"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--java"><span>if</span></span><span>&nbsp;</span><span class="syntax--punctuation syntax--bracket syntax--round syntax--java"><span>(</span></span><span>newState&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--java"><span>==</span></span><span>&nbsp;</span><span class="syntax--variable syntax--other syntax--object syntax--java"><span>State</span></span><span class="syntax--punctuation syntax--separator syntax--period syntax--java"><span>.</span></span><span class="syntax--variable syntax--other syntax--property syntax--java"><span>SUCCEEDED</span></span><span class="syntax--punctuation syntax--bracket syntax--round syntax--java"><span>)</span></span><span>&nbsp;</span><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--bracket syntax--curly syntax--java"><span>{</span></span></span></span></div><div class="line"><span class="syntax--source syntax--java"><span class="syntax--meta syntax--method-call syntax--java"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--definition syntax--variable syntax--java"><span class="syntax--storage syntax--type syntax--java"><span>Document</span></span><span>&nbsp;</span><span class="syntax--variable syntax--other syntax--definition syntax--java"><span>doc</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--java"><span>=</span></span><span>&nbsp;</span><span class="syntax--variable syntax--other syntax--object syntax--java"><span>webEngine</span></span><span class="syntax--meta syntax--method-call syntax--java"><span class="syntax--punctuation syntax--separator syntax--period syntax--java"><span>.</span></span><span class="syntax--entity syntax--name syntax--function syntax--java"><span>getDocument</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--java"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--java"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--java"><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--java"><span class="syntax--meta syntax--method-call syntax--java"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--bracket syntax--curly syntax--java"><span>}</span></span></span></span></div><div class="line"><span class="syntax--source syntax--java"><span class="syntax--meta syntax--method-call syntax--java"><span>&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--bracket syntax--curly syntax--java"><span>}</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--java"><span>)</span></span></span><span class="syntax--punctuation syntax--terminator syntax--java"><span>;</span></span></span></div><div class="line"><span class="syntax--source syntax--java"><span>&nbsp;&nbsp;</span><span class="syntax--variable syntax--other syntax--object syntax--java"><span>webEngine</span></span><span class="syntax--meta syntax--method-call syntax--java"><span class="syntax--punctuation syntax--separator syntax--period syntax--java"><span>.</span></span><span class="syntax--entity syntax--name syntax--function syntax--java"><span>loadContent</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--java"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--java"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--java"><span>"</span></span><span>&lt;h1&gt;hello&lt;/h1&gt;</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--java"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--java"><span>)</span></span></span><span class="syntax--punctuation syntax--terminator syntax--java"><span>;</span></span></span></div><div class="line"><span class="syntax--source syntax--java"><span class="syntax--punctuation syntax--whitespace syntax--comment syntax--leading syntax--java"><span>&nbsp;&nbsp;</span></span><span class="syntax--comment syntax--line syntax--double-slash syntax--java"><span class="syntax--punctuation syntax--definition syntax--comment syntax--java"><span>//</span></span><span>webEngine.load("</span><span class="syntax--markup syntax--underline syntax--link syntax--http syntax--hyperlink"><span>http://google.ch</span></span><span>");&nbsp;//&nbsp;This&nbsp;works&nbsp;too</span><span>&nbsp;</span></span></span></div></pre>
+
+</label></li>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   save html as string using <code>jSoupDoc.outerHtml</code> not <code>w3cDom.asString</code>
+</label></li>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   rewrite content operation code -&gt; editor operator class -&gt; utility method which returns html string
+</label></li>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   how to disable editor in read-only mode
+</label></li>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   how to remove toolbar in read-only mode and pdf
+</label></li>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   <code>Jsoup.pase(URL url, int timeout)</code> do not support files (java.net.MalformedURLException: Only http &amp; https protocols supported)
+</label></li>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   when disaplay note, when url is null, display nothing
+</label></li>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   <code>webEngine.loadContent</code> need to handle relative path manually
+</label></li>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   when closing the editor window and canceling export new note, url is still null
+</label></li>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   Auto refresh displaying after closing a editor window
+</label></li>
+<li><label>
+  <input checked="" class="task-list-item-checkbox" type="checkbox">
+   repetition of the js scripts makes multiple toolbars
+</label></li>
+</ul>
+<blockquote>
+<ul>
+<li><label>
+  <input class="task-list-item-checkbox" type="checkbox">
+   Webview Font. Problem of Chinese characters. Bold and italic failure.
+</label></li>
+</ul>
+</blockquote></body>
+</html>
