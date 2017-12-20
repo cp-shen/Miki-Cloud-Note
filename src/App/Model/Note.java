@@ -2,15 +2,39 @@ package App.Model;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 
-public class Note{
+public abstract class Note{
     private StringProperty title;
-    private URL url;
+    private StringProperty url;
 
-    public Note(String title,URL url){
-        this.url = url;
+    private String contentHtml;
+
+    void setContentHtml(String contentHtml){
+        this.contentHtml = contentHtml;
+    }
+
+    @NotNull
+    public String getContentHtml()throws URISyntaxException, IOException{
+        if(contentHtml == null){
+            updateContentByUrl();
+        }
+        return contentHtml;
+    }
+
+    public abstract void updateContentByUrl() throws URISyntaxException, IOException;
+
+    public Note(String title, @Nullable URL url){
+        if(url == null){
+            this.url = new SimpleStringProperty("null");
+        }else {
+            this.url = new SimpleStringProperty(url.toString());
+        }
         this.title = new SimpleStringProperty(title);
     }
 
@@ -26,11 +50,19 @@ public class Note{
         return title;
     }
 
-    public URL getUrl(){
-        return url;
+    public String getUrl(){
+        return url.get();
     }
 
-    public void setUrl(URL url){
-        this.url = url;
+    public void setUrl(@Nullable URL url) throws NoteUrlException{
+        if(url == null){
+            this.url.set("null");
+        }else {
+            this.url.set(url.toString());
+        }
+    }
+
+    public StringProperty urlProperty(){
+        return url;
     }
 }

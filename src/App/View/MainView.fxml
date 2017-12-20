@@ -15,8 +15,8 @@
                      <children>
                         <TableView fx:id="noteTable" layoutY="148.0" prefHeight="601.0" prefWidth="235.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn fx:id="noteTitleColumn" prefWidth="73.0" text="Notes" />
-                              <TableColumn prefWidth="152.0" text="URL" />
+                            <TableColumn fx:id="titleColumn" prefWidth="73.0" text="Notes" />
+                              <TableColumn fx:id="urlColumn" prefWidth="152.0" text="URL" />
                           </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -50,6 +50,13 @@
                         <MenuItem mnemonicParsing="false" onAction="#handleRemove" text="Remove Selected" />
                   </items>
                 </Menu>
+                  <Menu mnemonicParsing="false" text="Gist">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#handleGHLogin" text="Set Github Credentials" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleFetchById" text="Fetch Gist By Id" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleFetchByUser" text="Fetch Gists By User " />
+                    </items>
+                  </Menu>
               </menus>
             </MenuBar>
          </top>

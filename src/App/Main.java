@@ -1,5 +1,6 @@
 package App;
 
+import App.Client.Client;
 import App.View.MainView;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -24,9 +25,13 @@ public class Main extends Application{
             primaryStage.setScene(new Scene(fxmlLoader.load()));
             primaryStage.setTitle("Miki Cloud Note");
 
+            Client client = new Client();
+            client.setNotes(FXCollections.observableArrayList());
+
             MainView mainView = fxmlLoader.getController();
-            mainView.setNotes(FXCollections.observableArrayList());
             mainView.setPrimaryStage(primaryStage);
+            mainView.setNotes(client.getNotes());
+            mainView.setClient(client);
 
             primaryStage.show();
         }catch(IOException ex){

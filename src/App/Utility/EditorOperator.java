@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class EditorOperator{
-    public static String editorInit(String contentHtml, boolean isEditable){
+    public static String getEditorPageHtml(String contentHtml, boolean isEditable){
         try{
             File editorFile = new File("editor/editor.html");
             Document editorDoc = Jsoup.parse(editorFile,"UTF-8");
@@ -16,7 +16,7 @@ public class EditorOperator{
             //set the content
             editorDoc.getElementById("div2").html(contentHtml);
 
-            //set the js reference
+            //set the js reference by absolute path
             File jsFile = new File("editor/wangEditor-3.0.15/release/wangEditor.min.js");
             editorDoc.getElementsByTag("script").first().attr("src", jsFile.toURI().toURL().toString());
 
@@ -32,7 +32,7 @@ public class EditorOperator{
         }
     }
 
-    public static String getContentHtml(org.w3c.dom.Document WebW3cDoc){
+    public static String retrieveContentHtml(org.w3c.dom.Document WebW3cDoc){
         Document jSoupDoc = Jsoup.parse(new W3CDom().asString(WebW3cDoc));
 
         return jSoupDoc.getElementById("div2").getElementsByAttribute("contenteditable").first().html();

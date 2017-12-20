@@ -31,20 +31,24 @@ A desktop cloud note application
 
 ### Function Features
 1. Integrated with rich text editor **wangEditor**, which is open source and web based
-2. Cloud sync with github 
+2. Cloud sync with github gist
 5. PDF convertion
 
 ### Developing Schedule
 - [x] A javaFx Webview Integrated with web rich text editor
-- [x] Single note process. new, save, open, export
+- [x] Single note process.
+	- new, edit, save
+	- open, export
+	- remove
 - [x] Deal with multiple notes
 - [x] One display mainView and multiple editor windows
 - [x] convert note to pdf file and export it
-- [ ] Communicate with the gist server
+- [x] Github credential configuration and Remember the credential until the app exits
+- [ ] Communicate with the gist server and deal with online content
 - [ ] Record the opened notes with URL
 
 
-### Code Log
+### Trouble Shooting while coding
 - [x] right after load, `getEngine.getDocument() == null`
     ```java
     final WebView webView = new WebView();
@@ -67,5 +71,33 @@ A desktop cloud note application
 - [x] when closing the editor window and canceling export new note, url is still null
 - [x] Auto refresh displaying after closing a editor window
 - [x] repetition of the js scripts makes multiple toolbars
+- [x] Where is muti-thread?
+	```java
+	public byte[] getPDF() throws IOException, InterruptedException {
 
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+
+        try {
+            Process process = Runtime.getRuntime().exec(getCommandAsArray());
+
+            Future<byte[]> inputStreamToByteArray = executor.submit(streamToByteArrayTask(process.getInputStream()));
+            Future<byte[]> errorStreamToByteArray = executor.submit(streamToByteArrayTask(process.getErrorStream()));
+
+            process.waitFor();
+
+            if (process.exitValue() != 0) {
+                throw new RuntimeException("Process (" + getCommand() + ") exited with status code " + process.exitValue() + ":\n" + new String(getFuture(errorStreamToByteArray)));
+            }
+
+            return getFuture(inputStreamToByteArray);
+        } finally {
+            executor.shutdownNow();
+            cleanTempFiles();
+        }
+    }
+	```
+- [x]
+	```java
+	getUrl.equals("null");
+	```
 > - [ ] Webview Font. Problem of Chinese characters. Bold and italic failure.

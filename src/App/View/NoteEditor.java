@@ -1,6 +1,8 @@
 package App.View;
 
+import App.Model.LocalNote;
 import App.Model.Note;
+import App.Model.NoteUrlException;
 import App.Utility.EditorOperator;
 import App.Utility.PdfMaker;
 import javafx.fxml.FXML;
@@ -14,12 +16,16 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.net.URL;
 
 public class NoteEditor{
-    private Note note;
     @FXML
     private WebView webView;
+
     private Stage editorStage;
+
+    private Note note;
+
 
     public void initialize(){ }
 
@@ -42,12 +48,11 @@ public class NoteEditor{
 
     void displayNoteInEditor(){
         try{
-            if(note.getUrl() != null){
-                String contentHtml = Jsoup.parse(new File(note.getUrl().toURI()),"UTF-8").outerHtml();
-                webView.getEngine().loadContent(EditorOperator.editorInit(contentHtml,true));
+            //if is a new note
+            if(note.getUrl().equals("null")){
+                webView.getEngine().loadContent(EditorOperator.getEditorPageHtml("",true));
             }else {
-                //if is a new note
-                webView.getEngine().loadContent(EditorOperator.editorInit("",true));
+                webView.getEngine().loadContent(EditorOperator.getEditorPageHtml(note.getContentHtml(),true));
             }
         }catch(URISyntaxException | IOException ex){
             ex.printStackTrace();
@@ -58,12 +63,12 @@ public class NoteEditor{
     void handleSave(){
         try{
             //if is a new note
-            if(note.getUrl() == null){
+            if(note.getUrl().equals("null")){
                 handleExport();
-            }else{
-                String contentH = EditorOperator.getContentHtml(webView.getEngine().getDocument());
+            }else if(note instanceof LocalNote){
+                String contentH = EditorOperator.retrieveContentHtml(webView.getEngine().getDocument());
 
-                FileWriter fileWriter = new FileWriter(new File(note.getUrl().toURI()));
+                FileWriter fileWriter = new FileWriter(new File(new URL(note.getUrl()).toURI()));
                 fileWriter.write(contentH);
                 fileWriter.flush();
             }
@@ -81,19 +86,19 @@ public class NoteEditor{
 
             File target = fileChooser.showSaveDialog(editorStage);
             if(target != null){
-                String contentH = EditorOperator.getContentHtml(webView.getEngine().getDocument());
+                String contentH = EditorOperator.retrieveContentHtml(webView.getEngine().getDocument());
 
                 FileWriter fileWriter = new FileWriter(target);
                 fileWriter.write(contentH);
                 fileWriter.flush();
 
                 //if is a new note
-                if(note.getUrl() == null){
+                if(note.getUrl().equals("null")){
                     note.setTitle(target.getName());
                     note.setUrl(target.toURI().toURL());
                 }
             }
-        }catch(IOException ex){
+        }catch(IOException | NoteUrlException ex){
             ex.printStackTrace();
         }
     }
@@ -109,7 +114,7 @@ public class NoteEditor{
             Document pageDom = Jsoup.parse
                     ("<!DOCTYPE html>\n" + "<html>\n" + "<head>\n" + "<meta charset=\"UTF-8\">\n" + "<title>new note</title>\n" +
                             "</head>\n" + "<body>\n" + "<div>\n" + "</div>\n" + "</body>\n" + "</html>\n");
-            String contentHtml = EditorOperator.getContentHtml(webView.getEngine().getDocument());
+            String contentHtml = EditorOperator.retrieveContentHtml(webView.getEngine().getDocument());
             pageDom.getElementsByTag("div").html(contentHtml);
             String pageHtml = pageDom.outerHtml();
 
