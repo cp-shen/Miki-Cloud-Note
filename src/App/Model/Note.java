@@ -29,7 +29,7 @@ public abstract class Note{
 
     public abstract void updateContentByUrl() throws URISyntaxException, IOException;
 
-    public Note(String title, @Nullable URL url){
+    Note(String title, @Nullable URL url){
         if(url == null){
             this.url = new SimpleStringProperty("null");
         }else {

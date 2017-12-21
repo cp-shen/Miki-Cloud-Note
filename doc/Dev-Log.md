@@ -34,9 +34,9 @@ A desktop cloud note application
 2. Cloud sync with github gist
 5. PDF convertion
 
-### Developing Schedule
+### Roadmap
 - [x] A javaFx Webview Integrated with web rich text editor
-- [x] Single note process.
+- [x] Single note processing
 	- new, edit, save
 	- open, export
 	- remove
@@ -44,8 +44,12 @@ A desktop cloud note application
 - [x] One display mainView and multiple editor windows
 - [x] convert note to pdf file and export it
 - [x] Github credential configuration and Remember the credential until the app exits
-- [ ] Communicate with the gist server and deal with online content
+- [ ] Fetch gists by id or user
+- [ ] update gists in server
+- [ ] online note editor
+- [ ] create a new gist in server
 - [ ] Record the opened notes with URL
+- [ ] tip dialogs
 
 
 ### Trouble Shooting while coding
@@ -100,4 +104,6 @@ A desktop cloud note application
 	```java
 	getUrl.equals("null");
 	```
+- [ ] close request validation
+- [ ] new note not added to table, no "null" String
 > - [ ] Webview Font. Problem of Chinese characters. Bold and italic failure.
