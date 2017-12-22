@@ -4,7 +4,7 @@ import App.Client.Client;
 import App.Model.LocalNote;
 import App.Model.NoteUrlException;
 import App.Model.Note;
-import App.Utility.EditorOperator;
+import App.Utility.EditorUtil;
 import App.Utility.GistUtil;
 import App.Utility.WindowUtil;
 import javafx.collections.FXCollections;
@@ -12,11 +12,8 @@ import javafx.collections.MapChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
 import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
@@ -33,7 +30,7 @@ public class MainView{
     @FXML
     private TableView<Note> noteTable;
     @FXML
-    private TableColumn<Note, String> titleColumn, urlColumn;
+    private TableColumn<Note, String> fileNameColumn, urlColumn;
     @FXML
     private WebView displayView;
 
@@ -46,7 +43,7 @@ public class MainView{
 
     public void initialize(){
 
-        titleColumn.setCellValueFactory(param -> param.getValue().titleProperty());
+        fileNameColumn.setCellValueFactory(param -> param.getValue().fileNameProperty());
 
         urlColumn.setCellValueFactory(param -> param.getValue().urlProperty());
 
@@ -111,7 +108,7 @@ public class MainView{
     }
 
     @FXML @Nullable
-    private NoteEditor handleShowEditor(){
+    private EditorView handleShowEditor(){
         Note selectedNote = noteTable.getSelectionModel().getSelectedItem();
         if(selectedNote != null){
             return createEditor(selectedNote);
@@ -122,53 +119,53 @@ public class MainView{
 
     @FXML
     private void handleExport(){
-        NoteEditor noteEditor = handleShowEditor();
-        if(noteEditor != null){
-            noteEditor.handleExport();
-            noteEditor.getEditorStage().close();
+        EditorView editorView = handleShowEditor();
+        if(editorView != null){
+            editorView.handleExport();
+            editorView.getEditorStage().close();
         }
     }
 
     @FXML
     private void handleExportPdf(){
-        NoteEditor noteEditor = handleShowEditor();
-        if(noteEditor != null){
-            noteEditor.handleToPdf();
-            noteEditor.getEditorStage().close();
+        EditorView editorView = handleShowEditor();
+        if(editorView != null){
+            editorView.handleToPdf();
+            editorView.getEditorStage().close();
         }
     }
 
     private void displayNote(@Nullable Note note)throws IOException, URISyntaxException{
         if(note == null){
-            displayView.getEngine().loadContent(EditorOperator.getEditorPageHtml("",false));
+            displayView.getEngine().loadContent(EditorUtil.generateEditorPageHtml("",false));
         }else {
             //a new note
             if(note.getUrl() == null){
-                displayView.getEngine().loadContent(EditorOperator.getEditorPageHtml("",false));
+                displayView.getEngine().loadContent(EditorUtil.generateEditorPageHtml("",false));
             }else {
-                displayView.getEngine().loadContent(EditorOperator.getEditorPageHtml(note.getContentHtml(),false));
+                displayView.getEngine().loadContent(EditorUtil.generateEditorPageHtml(note.getContentHtml(),false));
             }
         }
     }
 
     @Nullable
-    private NoteEditor createEditor(@NotNull Note note){
+    private EditorView createEditor(@NotNull Note note){
         try{
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("NoteEditor.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("EditorView.fxml"));
 
             Stage editorStage = new Stage();
-            editorStage.setTitle("Editor : " + note.getTitle());
+            editorStage.titleProperty().bind(note.urlProperty());
             editorStage.setScene(new Scene(fxmlLoader.load()));
 
-            NoteEditor noteEditor = fxmlLoader.getController();
-            noteEditor.setEditorStage(editorStage);
-            noteEditor.setClient(client);
-            noteEditor.setNote(note);
-            noteEditor.displayNoteInEditor();
+            EditorView editorView = fxmlLoader.getController();
+            editorView.setEditorStage(editorStage);
+            editorView.setClient(client);
+            editorView.setNote(note);
+            editorView.displayNoteInEditor();
 
             editorStage.setOnCloseRequest(closeEvent -> {
-                    noteEditor.handleSave();
+                    editorView.handleSave();
                     if(note.getUrl() == null){
                         closeEvent.consume();
                         WindowUtil.showConfirmDialog(editorStage, "Do you want to duplicate the content?",
@@ -191,7 +188,7 @@ public class MainView{
             });
             editorStage.show();
 
-            return noteEditor;
+            return editorView;
         }catch(IOException ex){
             ex.printStackTrace();
             return null;
@@ -241,29 +238,17 @@ public class MainView{
             //show notification
             WindowUtil.showNotifyDialog(primaryStage, "GitHub Credential Not Set");
         }else {
-            TextField gistIdField = new TextField();
-            Button okButton = new Button("OK");
-            HBox hBox = new HBox(10d, gistIdField, okButton);
-
-            Stage dialogStage = new Stage();
-            dialogStage.initOwner(primaryStage);
-            dialogStage.initModality(Modality.WINDOW_MODAL);
-            dialogStage.setScene(new Scene(hBox));
-            dialogStage.setTitle("Gist Id Input");
-            dialogStage.show();
-
-            okButton.setOnAction(event -> {
-                try{
-                    String gistId = gistIdField.getText();
-                    if(gistId != null && !gistId.equals("")){
-                        GistUtil.fetchGistById(gistId, client);
-                    }
-                }catch(IOException ex){
-                    ex.printStackTrace();
-                    WindowUtil.showNotifyDialog(primaryStage, "Failed to Fetch Gists");
-                }
-                dialogStage.close();
-            });
+            WindowUtil.showInputDialog(primaryStage, "", "Gist ID",
+                    gistId -> {
+                        try{
+                            if(gistId != null && !gistId.equals("")){
+                                GistUtil.fetchGistById(gistId, client);
+                            }
+                        }catch(IOException ex){
+                            ex.printStackTrace();
+                            WindowUtil.showNotifyDialog(primaryStage, "Failed to Fetch Gists");
+                        }
+                    });
         }
     }
 }

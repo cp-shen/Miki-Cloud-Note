@@ -5,10 +5,13 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+
+import java.io.IOException;
 
 public class WindowUtil{
     public static void showNotifyDialog(Window owner, String notification){
@@ -44,4 +47,24 @@ public class WindowUtil{
         dialogStage.initModality(Modality.WINDOW_MODAL);
         dialogStage.show();
     }
+
+    public static void showInputDialog(Window owner, String initText, String title, TextHandler textHandler){
+        TextField textField = new TextField(initText);
+        Button okButton = new Button("OK");
+        HBox hBox = new HBox(10d, textField, okButton);
+
+        Stage dialogStage = new Stage();
+        dialogStage.initOwner(owner);
+        dialogStage.initModality(Modality.WINDOW_MODAL);
+        dialogStage.setScene(new Scene(hBox));
+        dialogStage.setTitle(title);
+        dialogStage.show();
+
+        okButton.setOnAction(event -> {
+            String input = textField.getText();
+            textHandler.handle(input);
+            dialogStage.close();
+        });
+    }
+
 }

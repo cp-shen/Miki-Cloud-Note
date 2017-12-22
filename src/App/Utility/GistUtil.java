@@ -8,6 +8,7 @@ import org.eclipse.egit.github.core.GistFile;
 import org.eclipse.egit.github.core.service.GistService;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 public class GistUtil{
@@ -29,6 +30,21 @@ public class GistUtil{
             Note newNote = new OnlineNote(gist);
             client.getNoteMap().put(newNote.getUrl(), newNote);
         }
+    }
+
+    public static Gist createNewGist(Client client, String fileName, String content)throws IOException{
+        GistService gistService = new GistService();
+        gistService.getClient().setCredentials(client.getCredential().getUser(), client.getCredential().getPassword());
+
+        Gist localGist = new Gist();
+        GistFile localGistFile = new GistFile();
+
+        localGistFile.setContent(content);
+        localGist.setPublic(false);
+        localGist.setDescription("Created By Miki Cloud Note");
+        localGist.setFiles(Collections.singletonMap(fileName, localGistFile));
+
+        return gistService.createGist(localGist);
     }
 
     public static String getFileNameByGist(Gist gist){

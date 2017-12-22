@@ -7,8 +7,8 @@ import org.jsoup.nodes.Document;
 import java.io.File;
 import java.io.IOException;
 
-public class EditorOperator{
-    public static String getEditorPageHtml(String contentHtml, boolean isEditable){
+public class EditorUtil{
+    public static String generateEditorPageHtml(String contentHtml, boolean isEditable){
         try{
             File editorFile = new File("editor/editor.html");
             Document editorDoc = Jsoup.parse(editorFile,"UTF-8");

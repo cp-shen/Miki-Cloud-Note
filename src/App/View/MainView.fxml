@@ -15,7 +15,7 @@
                      <children>
                         <TableView fx:id="noteTable" layoutY="148.0" prefHeight="601.0" prefWidth="235.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn fx:id="titleColumn" prefWidth="73.0" text="Notes" />
+                            <TableColumn fx:id="fileNameColumn" prefWidth="73.0" text="FileName" />
                               <TableColumn fx:id="urlColumn" prefWidth="152.0" text="URL" />
                           </columns>
                            <columnResizePolicy>

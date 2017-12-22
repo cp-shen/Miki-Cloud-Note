@@ -4,12 +4,15 @@ import App.Client.Client;
 import App.Model.LocalNote;
 import App.Model.Note;
 import App.Model.NoteUrlException;
-import App.Utility.EditorOperator;
+import App.Utility.EditorUtil;
+import App.Utility.GistUtil;
 import App.Utility.PdfMaker;
+import App.Utility.WindowUtil;
 import javafx.fxml.FXML;
 import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.eclipse.egit.github.core.Gist;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -19,7 +22,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-public class NoteEditor{
+public class EditorView{
     @FXML
     private WebView webView;
 
@@ -56,9 +59,9 @@ public class NoteEditor{
         try{
             //if is a new note
             if(note.getUrl() == null){
-                webView.getEngine().loadContent(EditorOperator.getEditorPageHtml("",true));
+                webView.getEngine().loadContent(EditorUtil.generateEditorPageHtml("",true));
             }else {
-                webView.getEngine().loadContent(EditorOperator.getEditorPageHtml(note.getContentHtml(),true));
+                webView.getEngine().loadContent(EditorUtil.generateEditorPageHtml(note.getContentHtml(),true));
             }
         }catch(URISyntaxException | IOException ex){
             ex.printStackTrace();
@@ -72,7 +75,7 @@ public class NoteEditor{
             if(note.getUrl() == null){
                 handleExport();
             }else if(note instanceof LocalNote){
-                String contentH = EditorOperator.retrieveContentHtml(webView.getEngine().getDocument());
+                String contentH = EditorUtil.retrieveContentHtml(webView.getEngine().getDocument());
 
                 FileWriter fileWriter = new FileWriter(new File(new URL(note.getUrl()).toURI()));
                 fileWriter.write(contentH);
@@ -80,6 +83,7 @@ public class NoteEditor{
 
                 //update content in main memory
                 note.updateContentByUrl();
+                WindowUtil.showNotifyDialog(editorStage, "Saved changes to disk");
             }
         }catch(IOException | URISyntaxException ex){
             ex.printStackTrace();
@@ -95,7 +99,7 @@ public class NoteEditor{
 
             File target = fileChooser.showSaveDialog(editorStage);
             if(target != null){
-                String contentH = EditorOperator.retrieveContentHtml(webView.getEngine().getDocument());
+                String contentH = EditorUtil.retrieveContentHtml(webView.getEngine().getDocument());
 
                 FileWriter fileWriter = new FileWriter(target);
                 fileWriter.write(contentH);
@@ -103,7 +107,7 @@ public class NoteEditor{
 
                 //if is a new note
                 if(note.getUrl() == null){
-                    note.setTitle(target.getName());
+                    note.setFileName(target.getName());
                     note.setUrl(target.toURI().toURL());
                 }
 
@@ -127,11 +131,30 @@ public class NoteEditor{
             Document pageDom = Jsoup.parse
                     ("<!DOCTYPE html>\n" + "<html>\n" + "<head>\n" + "<meta charset=\"UTF-8\">\n" + "<title>new note</title>\n" +
                             "</head>\n" + "<body>\n" + "<div>\n" + "</div>\n" + "</body>\n" + "</html>\n");
-            String contentHtml = EditorOperator.retrieveContentHtml(webView.getEngine().getDocument());
+            String contentHtml = EditorUtil.retrieveContentHtml(webView.getEngine().getDocument());
             pageDom.getElementsByTag("div").html(contentHtml);
             String pageHtml = pageDom.outerHtml();
 
             PdfMaker.makePdf(pageHtml, target.getAbsolutePath());
+        }
+    }
+
+    @FXML
+    private void handleNewGist(){
+        if(client.getCredential() == null){
+            //show notification
+            WindowUtil.showNotifyDialog(editorStage, "GitHub Credential Not Set");
+        }else {
+            WindowUtil.showInputDialog(editorStage, note.getFileName(), "GistFileName",
+                    fileName -> {
+                        try{
+                            Gist newGist = GistUtil.createNewGist(client, fileName, EditorUtil.retrieveContentHtml(webView.getEngine().getDocument()));
+                            WindowUtil.showNotifyDialog(editorStage, "New Gist Created at\r\n" + newGist.getUrl());
+                        }catch(IOException ex){
+                            ex.printStackTrace();
+                            WindowUtil.showNotifyDialog(editorStage, "Failed to Create New Gist");
+                        }
+                    });
         }
     }
 }

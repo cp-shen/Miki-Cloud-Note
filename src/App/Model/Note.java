@@ -10,7 +10,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 public abstract class Note{
-    private StringProperty title;
+    private StringProperty fileName;
     private StringProperty url;
 
     private String contentHtml;
@@ -29,25 +29,25 @@ public abstract class Note{
 
     public abstract void updateContentByUrl() throws URISyntaxException, IOException;
 
-    Note(String title, @Nullable URL url){
+    Note(String fileName, @Nullable URL url){
         if(url == null){
             this.url = new SimpleStringProperty(null);
         }else {
             this.url = new SimpleStringProperty(url.toString());
         }
-        this.title = new SimpleStringProperty(title);
+        this.fileName = new SimpleStringProperty(fileName);
     }
 
-    public void setTitle(String title){
-        this.title.set(title);
+    public void setFileName(String fileName){
+        this.fileName.set(fileName);
     }
 
-    public String getTitle(){
-        return title.get();
+    public String getFileName(){
+        return fileName.get();
     }
 
-    public StringProperty titleProperty(){
-        return title;
+    public StringProperty fileNameProperty(){
+        return fileName;
     }
 
     public String getUrl(){
