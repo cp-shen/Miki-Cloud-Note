@@ -2,18 +2,20 @@ package App.Client;
 
 import App.Model.GHCredential;
 import App.Model.Note;
-import javafx.collections.ObservableList;
+import javafx.collections.ObservableMap;
+
+
 
 public class Client{
-    private ObservableList<Note> notes;
+    private ObservableMap<String, Note> noteMap;
     private GHCredential credential;
 
-    public void setNotes(ObservableList<Note> notes){
-        this.notes = notes;
+    public void setNoteMap(ObservableMap<String, Note> noteMap){
+        this.noteMap = noteMap;
     }
 
-    public ObservableList<Note> getNotes(){
-        return notes;
+    public ObservableMap<String, Note> getNoteMap(){
+        return noteMap;
     }
 
     public void setCredential(GHCredential credential){

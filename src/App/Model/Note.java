@@ -31,7 +31,7 @@ public abstract class Note{
 
     Note(String title, @Nullable URL url){
         if(url == null){
-            this.url = new SimpleStringProperty("null");
+            this.url = new SimpleStringProperty(null);
         }else {
             this.url = new SimpleStringProperty(url.toString());
         }
@@ -56,7 +56,7 @@ public abstract class Note{
 
     public void setUrl(@Nullable URL url) throws NoteUrlException{
         if(url == null){
-            this.url.set("null");
+            this.url.set(null);
         }else {
             this.url.set(url.toString());
         }

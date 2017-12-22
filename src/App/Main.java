@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 public class Main extends Application{
 
@@ -26,11 +27,10 @@ public class Main extends Application{
             primaryStage.setTitle("Miki Cloud Note");
 
             Client client = new Client();
-            client.setNotes(FXCollections.observableArrayList());
+            client.setNoteMap(FXCollections.observableMap(new HashMap<>()));
 
             MainView mainView = fxmlLoader.getController();
             mainView.setPrimaryStage(primaryStage);
-            mainView.setNotes(client.getNotes());
             mainView.setClient(client);
 
             primaryStage.show();

@@ -1,5 +1,6 @@
 package App.View;
 
+import App.Client.Client;
 import App.Model.LocalNote;
 import App.Model.Note;
 import App.Model.NoteUrlException;
@@ -26,8 +27,13 @@ public class NoteEditor{
 
     private Note note;
 
+    private Client client;
 
     public void initialize(){ }
+
+    void setClient(Client client){
+        this.client = client;
+    }
 
     void setNote(Note note){
         this.note = note;
@@ -49,7 +55,7 @@ public class NoteEditor{
     void displayNoteInEditor(){
         try{
             //if is a new note
-            if(note.getUrl().equals("null")){
+            if(note.getUrl() == null){
                 webView.getEngine().loadContent(EditorOperator.getEditorPageHtml("",true));
             }else {
                 webView.getEngine().loadContent(EditorOperator.getEditorPageHtml(note.getContentHtml(),true));
@@ -62,8 +68,8 @@ public class NoteEditor{
     @FXML
     void handleSave(){
         try{
-            //if is a new note
-            if(note.getUrl().equals("null")){
+            //if is a new local note
+            if(note.getUrl() == null){
                 handleExport();
             }else if(note instanceof LocalNote){
                 String contentH = EditorOperator.retrieveContentHtml(webView.getEngine().getDocument());
@@ -71,6 +77,9 @@ public class NoteEditor{
                 FileWriter fileWriter = new FileWriter(new File(new URL(note.getUrl()).toURI()));
                 fileWriter.write(contentH);
                 fileWriter.flush();
+
+                //update content in main memory
+                note.updateContentByUrl();
             }
         }catch(IOException | URISyntaxException ex){
             ex.printStackTrace();
@@ -93,10 +102,14 @@ public class NoteEditor{
                 fileWriter.flush();
 
                 //if is a new note
-                if(note.getUrl().equals("null")){
+                if(note.getUrl() == null){
                     note.setTitle(target.getName());
                     note.setUrl(target.toURI().toURL());
                 }
+
+                //open the exported note
+                Note openedNote = new LocalNote(target.getName(), target.toURI().toURL());
+                client.getNoteMap().put(openedNote.getUrl(), openedNote);
             }
         }catch(IOException | NoteUrlException ex){
             ex.printStackTrace();

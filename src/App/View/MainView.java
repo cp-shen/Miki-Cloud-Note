@@ -6,7 +6,9 @@ import App.Model.NoteUrlException;
 import App.Model.Note;
 import App.Utility.EditorOperator;
 import App.Utility.GistUtil;
-import javafx.collections.ObservableList;
+import App.Utility.WindowUtil;
+import javafx.collections.FXCollections;
+import javafx.collections.MapChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -31,21 +33,23 @@ public class MainView{
     @FXML
     private TableView<Note> noteTable;
     @FXML
-    private TableColumn<Note,String> titleColumn, urlColumn;
+    private TableColumn<Note, String> titleColumn, urlColumn;
     @FXML
     private WebView displayView;
 
     private Stage primaryStage;
     private Client client;
-    private ObservableList<Note> notes;
 
     public void setPrimaryStage(Stage primaryStage){
         this.primaryStage = primaryStage;
     }
 
     public void initialize(){
+
         titleColumn.setCellValueFactory(param -> param.getValue().titleProperty());
+
         urlColumn.setCellValueFactory(param -> param.getValue().urlProperty());
+
         noteTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             try{
                 if(newValue != null){
@@ -62,18 +66,18 @@ public class MainView{
 
     public void setClient(Client client){
         this.client = client;
-    }
-
-    public void setNotes(ObservableList<Note> notes){
-        this.notes = notes;
-        noteTable.setItems(notes);
+        client.getNoteMap().addListener(new MapChangeListener<String, Note>(){
+            @Override
+            public void onChanged(Change<? extends String, ? extends Note> change){
+                noteTable.setItems(FXCollections.observableArrayList(client.getNoteMap().values()));
+            }
+        });
     }
 
     @FXML
     private void handleNew(){
         try{
             Note newNote = new LocalNote("untitled",null);
-            notes.add(newNote);
             createEditor(newNote);
         }catch(NoteUrlException ex){
             ex.printStackTrace();
@@ -84,7 +88,7 @@ public class MainView{
     private void handleRemove(){
         Note selectedNote = noteTable.getSelectionModel().getSelectedItem();
         if(selectedNote != null){
-            notes.remove(selectedNote);
+            client.getNoteMap().remove(selectedNote.getUrl());
         }
     }
 
@@ -97,7 +101,8 @@ public class MainView{
             File source = fileChooser.showOpenDialog(primaryStage);
             if(source != null){
                 Note openedNote = new LocalNote(source.getName(), source.toURI().toURL());
-                notes.add(openedNote);
+                client.getNoteMap().put(openedNote.getUrl(), openedNote);
+                noteTable.getSelectionModel().select(openedNote);
                 displayNote(openedNote);
             }
         }catch(NoteUrlException | URISyntaxException | IOException ex){
@@ -138,7 +143,7 @@ public class MainView{
             displayView.getEngine().loadContent(EditorOperator.getEditorPageHtml("",false));
         }else {
             //a new note
-            if(note.getUrl().equals("null")){
+            if(note.getUrl() == null){
                 displayView.getEngine().loadContent(EditorOperator.getEditorPageHtml("",false));
             }else {
                 displayView.getEngine().loadContent(EditorOperator.getEditorPageHtml(note.getContentHtml(),false));
@@ -158,18 +163,31 @@ public class MainView{
 
             NoteEditor noteEditor = fxmlLoader.getController();
             noteEditor.setEditorStage(editorStage);
+            noteEditor.setClient(client);
             noteEditor.setNote(note);
             noteEditor.displayNoteInEditor();
 
-            editorStage.setOnCloseRequest(event -> {
-                try{
+            editorStage.setOnCloseRequest(closeEvent -> {
                     noteEditor.handleSave();
-                    noteTable.getSelectionModel().select(note);
-                    //refresh
-                    displayNote(note);
-                }catch(IOException | URISyntaxException ex){
-                    ex.printStackTrace();
-                }
+                    if(note.getUrl() == null){
+                        closeEvent.consume();
+                        WindowUtil.showConfirmDialog(editorStage, "Do you want to duplicate the content?",
+                            okClicked -> {
+                                //close the window
+                                editorStage.close();
+                            },
+                            cancelClicked -> {
+                                //do not close the window
+                            });
+                    }else {
+                        //refresh content in mainView
+                        noteTable.getSelectionModel().select(note);
+                        try{
+                            displayNote(note);
+                        }catch(IOException | URISyntaxException ex){
+                            ex.printStackTrace();
+                        }
+                    }
             });
             editorStage.show();
 
@@ -205,35 +223,47 @@ public class MainView{
     @FXML
     private void handleFetchByUser(){
         try{
-            GistUtil.fetchGistByUser(client);
+            if(client.getCredential() == null){
+                //show notification
+                WindowUtil.showNotifyDialog(primaryStage, "GitHub Credential Not Set");
+            }else {
+                GistUtil.fetchGistByUser(client);
+            }
         }catch(IOException ex){
             ex.printStackTrace();
+            WindowUtil.showNotifyDialog(primaryStage, "Failed to Fetch Gists");
         }
     }
 
     @FXML
     private void handleFetchById(){
-        TextField gistIdField = new TextField();
-        Button okButton = new Button("OK");
-        HBox hBox = new HBox(10d, gistIdField, okButton);
+        if(client.getCredential() == null){
+            //show notification
+            WindowUtil.showNotifyDialog(primaryStage, "GitHub Credential Not Set");
+        }else {
+            TextField gistIdField = new TextField();
+            Button okButton = new Button("OK");
+            HBox hBox = new HBox(10d, gistIdField, okButton);
 
-        Stage dialogStage = new Stage();
-        dialogStage.initOwner(primaryStage);
-        dialogStage.initModality(Modality.WINDOW_MODAL);
-        dialogStage.setScene(new Scene(hBox));
-        dialogStage.setTitle("Gist Id Input");
-        dialogStage.show();
+            Stage dialogStage = new Stage();
+            dialogStage.initOwner(primaryStage);
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.setScene(new Scene(hBox));
+            dialogStage.setTitle("Gist Id Input");
+            dialogStage.show();
 
-        okButton.setOnAction(event -> {
-            try{
-                String gistId = gistIdField.getText();
-                if(gistId != null && !gistId.equals("")){
-                    GistUtil.fetchGistById(gistId, client);
+            okButton.setOnAction(event -> {
+                try{
+                    String gistId = gistIdField.getText();
+                    if(gistId != null && !gistId.equals("")){
+                        GistUtil.fetchGistById(gistId, client);
+                    }
+                }catch(IOException ex){
+                    ex.printStackTrace();
+                    WindowUtil.showNotifyDialog(primaryStage, "Failed to Fetch Gists");
                 }
-            }catch(IOException ex){
-                ex.printStackTrace();
-            }
-            dialogStage.close();
-        });
+                dialogStage.close();
+            });
+        }
     }
 }

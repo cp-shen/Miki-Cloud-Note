@@ -1,6 +1,7 @@
 package App.Utility;
 
 import App.Client.Client;
+import App.Model.Note;
 import App.Model.OnlineNote;
 import org.eclipse.egit.github.core.Gist;
 import org.eclipse.egit.github.core.GistFile;
@@ -15,7 +16,8 @@ public class GistUtil{
         gistService.getClient().setCredentials(client.getCredential().getUser(), client.getCredential().getPassword());
 
         Gist gist = gistService.getGist(gistId);
-        client.getNotes().add(new OnlineNote(gist));
+        Note newNote = new OnlineNote(gist);
+        client.getNoteMap().put(newNote.getUrl(), newNote);
     }
 
     public static void fetchGistByUser(Client client)throws IOException{
@@ -24,7 +26,8 @@ public class GistUtil{
 
         List<Gist> gists = gistService.getGists(client.getCredential().getUser());
         for(Gist gist : gists){
-            client.getNotes().add(new OnlineNote(gist));
+            Note newNote = new OnlineNote(gist);
+            client.getNoteMap().put(newNote.getUrl(), newNote);
         }
     }
 
