@@ -9,13 +9,10 @@ import java.io.IOException;
 
 public class PdfMaker{
 
-    public static void makePdf(@NotNull String pageHtml, @NotNull String targetPath){
-        try{
-                Pdf pdf = new Pdf();
-                pdf.addPageFromString(pageHtml);
-                pdf.saveAs(targetPath);
-        }catch(InterruptedException | IOException ex){
-            ex.printStackTrace();
-        }
+    public static void makePdf(@NotNull String pageHtml, @NotNull String targetPath)
+        throws InterruptedException, IOException{
+            Pdf pdf = new Pdf();
+            pdf.addPageFromString(pageHtml);
+            pdf.saveAs(targetPath);
     }
 }

@@ -40,11 +40,29 @@ public class GistUtil{
         GistFile localGistFile = new GistFile();
 
         localGistFile.setContent(content);
+        localGistFile.setFilename(fileName);
         localGist.setPublic(false);
         localGist.setDescription("Created By Miki Cloud Note");
         localGist.setFiles(Collections.singletonMap(fileName, localGistFile));
 
         return gistService.createGist(localGist);
+    }
+
+    public static Gist updateGist(Client client, String fileName, String content, String gistId)throws IOException{
+        GistService gistService = new GistService();
+        gistService.getClient().setCredentials(client.getCredential().getUser(), client.getCredential().getPassword());
+
+        Gist localGist = new Gist();
+        GistFile localGistFile = new GistFile();
+
+        localGistFile.setContent(content);
+        localGistFile.setFilename(fileName);
+        localGist.setPublic(false);
+        localGist.setId(gistId);
+        localGist.setDescription("Created By Miki Cloud Note");
+        localGist.setFiles(Collections.singletonMap(fileName, localGistFile));
+
+        return gistService.updateGist(localGist);
     }
 
     public static String getFileNameByGist(Gist gist){

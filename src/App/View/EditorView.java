@@ -4,6 +4,7 @@ import App.Client.Client;
 import App.Model.LocalNote;
 import App.Model.Note;
 import App.Model.NoteUrlException;
+import App.Model.OnlineNote;
 import App.Utility.EditorUtil;
 import App.Utility.GistUtil;
 import App.Utility.PdfMaker;
@@ -74,7 +75,9 @@ public class EditorView{
             //if is a new local note
             if(note.getUrl() == null){
                 handleExport();
-            }else if(note instanceof LocalNote){
+            }else if(note instanceof OnlineNote){
+                WindowUtil.showNotifyDialog(editorStage, "This is not a local note.");
+            }else {
                 String contentH = EditorUtil.retrieveContentHtml(webView.getEngine().getDocument());
 
                 FileWriter fileWriter = new FileWriter(new File(new URL(note.getUrl()).toURI()));
@@ -135,7 +138,12 @@ public class EditorView{
             pageDom.getElementsByTag("div").html(contentHtml);
             String pageHtml = pageDom.outerHtml();
 
-            PdfMaker.makePdf(pageHtml, target.getAbsolutePath());
+            try{
+                PdfMaker.makePdf(pageHtml, target.getAbsolutePath());
+            }catch(IOException | InterruptedException ex){
+                WindowUtil.showNotifyDialog(editorStage, "Failed to Build PDF File");
+                ex.printStackTrace();
+            }
         }
     }
 
@@ -146,15 +154,37 @@ public class EditorView{
             WindowUtil.showNotifyDialog(editorStage, "GitHub Credential Not Set");
         }else {
             WindowUtil.showInputDialog(editorStage, note.getFileName(), "GistFileName",
-                    fileName -> {
-                        try{
-                            Gist newGist = GistUtil.createNewGist(client, fileName, EditorUtil.retrieveContentHtml(webView.getEngine().getDocument()));
-                            WindowUtil.showNotifyDialog(editorStage, "New Gist Created at\r\n" + newGist.getUrl());
-                        }catch(IOException ex){
-                            ex.printStackTrace();
-                            WindowUtil.showNotifyDialog(editorStage, "Failed to Create New Gist");
-                        }
-                    });
+                fileName -> {
+                    try{
+                        Gist newGist = GistUtil.createNewGist(client, fileName, EditorUtil.retrieveContentHtml(webView.getEngine().getDocument()));
+                        WindowUtil.showNotifyDialog(editorStage, "New Gist Created at\r\n" + newGist.getUrl());
+                        GistUtil.fetchGistById(newGist.getId(), client);
+                    }catch(IOException ex){
+                        ex.printStackTrace();
+                        WindowUtil.showNotifyDialog(editorStage, "Failed to Create New Gist");
+                    }
+                });
+        }
+    }
+
+    @FXML
+    private void handleSubmit(){
+        if(note instanceof LocalNote){
+            WindowUtil.showNotifyDialog(editorStage, "This is not an online note.");
+        }else {
+            try{
+                String contentHtml = EditorUtil.retrieveContentHtml(webView.getEngine().getDocument());
+                String gistId = ((OnlineNote)note).getGistId();
+
+                Gist updatedGist = GistUtil.updateGist(client, note.getFileName(), contentHtml, gistId);
+                Note updatedNote = new OnlineNote(updatedGist);
+                client.getNoteMap().put(updatedNote.getUrl(), updatedNote);
+
+                WindowUtil.showNotifyDialog(editorStage, "Gist Content Updated");
+            }catch(IOException ex){
+                ex.printStackTrace();
+                WindowUtil.showNotifyDialog(editorStage, "Failed to Update");
+            }
         }
     }
 }

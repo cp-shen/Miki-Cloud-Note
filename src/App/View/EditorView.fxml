@@ -19,7 +19,7 @@
                         <HBox alignment="TOP_RIGHT" prefHeight="42.0" prefWidth="586.0" spacing="10.0">
                            <children>
                               <Button mnemonicParsing="false" onAction="#handleNewGist" text="Submit As New Gist" />
-                              <Button mnemonicParsing="false" text="Submit to Server" />
+                              <Button mnemonicParsing="false" onAction="#handleSubmit" text="Submit to Server" />
                            </children>
                         </HBox>
                      </children>

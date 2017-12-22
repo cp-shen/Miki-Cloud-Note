@@ -12,19 +12,21 @@ import java.net.URL;
 
 
 public class OnlineNote extends Note{
-    private Gist gist;
+    private String gistId;
+    private String fileUrl;
 
     public OnlineNote(Gist gist)throws MalformedURLException{
-        super(GistUtil.getFileNameByGist(gist), new URL(GistUtil.getFileRawUrlByGist(gist)));
-        this.gist = gist;
+        super(GistUtil.getFileNameByGist(gist), new URL(gist.getUrl()));
+        this.gistId = gist.getId();
+        this.fileUrl = GistUtil.getFileRawUrlByGist(gist);
     }
 
-    public Gist getGist(){
-        return gist;
+    public String getGistId(){
+        return gistId;
     }
 
     @Override
     public void updateContentByUrl() throws URISyntaxException, IOException{
-        setContentHtml(Jsoup.parse(new URL(getUrl()),3000).outerHtml());
+        setContentHtml(Jsoup.parse(new URL(fileUrl),3000).outerHtml());
     }
 }
