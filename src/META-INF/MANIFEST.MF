@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Class-Path: commons-lang3-3.7-sources.jar gson-2.3.1.jar commons-lang3
+ -3.7.jar commons-io-2.6-javadoc.jar jsoup-1.11.2.jar commons-io-2.6.j
+ ar commons-lang3-3.7-javadoc.jar annotations-java8.jar commons-io-2.6
+ -sources.jar
+Main-Class: App.Main
+

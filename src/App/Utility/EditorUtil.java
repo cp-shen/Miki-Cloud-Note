@@ -23,6 +23,9 @@ public class EditorUtil{
             //set if editable
             if(!isEditable){
                 editorDoc.getElementsByTag("script").last().append("editor1.$textElem.attr('contenteditable', false)");
+
+                //remove the tool bar
+                editorDoc.getElementById("div1").remove();
             }
 
             return editorDoc.outerHtml();

@@ -168,7 +168,7 @@ public class MainView{
                     editorView.handleSave();
                     if(note.getUrl() == null){
                         closeEvent.consume();
-                        WindowUtil.showConfirmDialog(editorStage, "Do you want to duplicate the content?",
+                        WindowUtil.showConfirmDialog(editorStage, "Do you want to drop the content?",
                             okClicked -> {
                                 //close the window
                                 editorStage.close();
