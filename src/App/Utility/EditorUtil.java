@@ -27,7 +27,8 @@ public class EditorUtil{
                 //remove the tool bar
                 editorDoc.getElementById("div1").remove();
             }
-
+            //test
+            System.out.println(editorDoc.outerHtml());
             return editorDoc.outerHtml();
         }catch(IOException ex){
             ex.printStackTrace();

@@ -165,7 +165,6 @@ public class MainView{
             editorView.displayNoteInEditor();
 
             editorStage.setOnCloseRequest(closeEvent -> {
-                    editorView.handleSave();
                     if(note.getUrl() == null){
                         closeEvent.consume();
                         WindowUtil.showConfirmDialog(editorStage, "Do you want to drop the content?",
@@ -177,6 +176,7 @@ public class MainView{
                                 //do not close the window
                             });
                     }else {
+                        editorView.handleSave();
                         //refresh content in mainView
                         noteTable.getSelectionModel().select(note);
                         try{

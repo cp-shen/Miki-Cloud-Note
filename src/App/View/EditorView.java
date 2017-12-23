@@ -17,9 +17,7 @@ import org.eclipse.egit.github.core.Gist;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 
@@ -80,9 +78,10 @@ public class EditorView{
             }else {
                 String contentH = EditorUtil.retrieveContentHtml(webView.getEngine().getDocument());
 
-                FileWriter fileWriter = new FileWriter(new File(new URL(note.getUrl()).toURI()));
-                fileWriter.write(contentH);
-                fileWriter.flush();
+                FileOutputStream fos = new FileOutputStream(new File(new URL(note.getUrl()).toURI()));
+                OutputStreamWriter writer = new OutputStreamWriter(fos, "UTF-8");
+                writer.write(contentH);
+                writer.flush();
 
                 //update content in main memory
                 note.updateContentByUrl();
@@ -104,9 +103,10 @@ public class EditorView{
             if(target != null){
                 String contentH = EditorUtil.retrieveContentHtml(webView.getEngine().getDocument());
 
-                FileWriter fileWriter = new FileWriter(target);
-                fileWriter.write(contentH);
-                fileWriter.flush();
+                FileOutputStream fos = new FileOutputStream(target);
+                OutputStreamWriter writer = new OutputStreamWriter(fos, "UTF-8");
+                writer.write(contentH);
+                writer.flush();
 
                 //if is a new note
                 if(note.getUrl() == null){
