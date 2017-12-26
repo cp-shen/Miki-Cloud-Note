@@ -1,8 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
 /.idea/
-/out/
+/out/production/
 /lib/
 /Miki-Cloud-Note.iml
-/doc/
+/doc/*.pdf
 /wkhtmltopdf/
 /videoDemo/
