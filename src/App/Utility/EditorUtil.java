@@ -7,7 +7,17 @@ import org.jsoup.nodes.Document;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * The type Editor util.
+ */
 public class EditorUtil{
+    /**
+     * Generate editor page html string.
+     *
+     * @param contentHtml the content html
+     * @param isEditable  the is editable
+     * @return the string
+     */
     public static String generateEditorPageHtml(String contentHtml, boolean isEditable){
         try{
             File editorFile = new File("editor/editor.html");
@@ -36,6 +46,12 @@ public class EditorUtil{
         }
     }
 
+    /**
+     * Retrieve content html string.
+     *
+     * @param WebW3cDoc the web w 3 c doc
+     * @return the string
+     */
     public static String retrieveContentHtml(org.w3c.dom.Document WebW3cDoc){
         Document jSoupDoc = Jsoup.parse(new W3CDom().asString(WebW3cDoc));
 

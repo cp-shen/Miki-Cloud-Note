@@ -7,7 +7,17 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+/**
+ * The type Local note.
+ */
 public class LocalNote extends Note{
+    /**
+     * Instantiates a new Local note.
+     *
+     * @param title the title
+     * @param url   the url
+     * @throws NoteUrlException the note url exception
+     */
     public LocalNote(String title, URL url)throws NoteUrlException{
         super(title, url);
         if(url != null && !url.getProtocol().equals("file")){

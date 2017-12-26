@@ -7,6 +7,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * The type Login dialog.
+ */
 public class LoginDialog{
     @FXML
     private TextField userField;
@@ -17,17 +20,33 @@ public class LoginDialog{
 
     private Client client;
 
+    /**
+     * Set dialog stage.
+     *
+     * @param dialogStage the dialog stage
+     */
     void setDialogStage(Stage dialogStage){
         this.dialogStage = dialogStage;
     }
 
+    /**
+     * Set client.
+     *
+     * @param client the client
+     */
     public void setClient(Client client){
         this.client = client;
     }
 
+    /**
+     * Initialize.
+     */
     public void initialize(){
     }
 
+    /**
+     * Show credentials.
+     */
     void showCredentials(){
         if(client.getCredential() != null){
             userField.setText(client.getCredential().getUser());

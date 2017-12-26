@@ -21,6 +21,9 @@ import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+/**
+ * The type Editor view.
+ */
 public class EditorView{
     @FXML
     private WebView webView;
@@ -31,29 +34,50 @@ public class EditorView{
 
     private Client client;
 
+    /**
+     * Initialize.
+     */
     public void initialize(){ }
 
+    /**
+     * Set client.
+     *
+     * @param client the client
+     */
     void setClient(Client client){
         this.client = client;
     }
 
+    /**
+     * Set note.
+     *
+     * @param note the note
+     */
     void setNote(Note note){
         this.note = note;
     }
 
     /**
      * Set editor stage.
-     * @param editorStage the editor stage
-     *                    Used to pop up file chooser
+     *
+     * @param editorStage the editor stage                    Used to pop up file chooser
      */
     void setEditorStage(Stage editorStage){
         this.editorStage = editorStage;
     }
 
+    /**
+     * Get editor stage stage.
+     *
+     * @return the stage
+     */
     Stage getEditorStage(){
         return editorStage;
     }
 
+    /**
+     * Display note in editor.
+     */
     void displayNoteInEditor(){
         try{
             //if is a new note
@@ -67,6 +91,9 @@ public class EditorView{
         }
     }
 
+    /**
+     * Handle save.
+     */
     @FXML
     void handleSave(){
         try{
@@ -92,6 +119,9 @@ public class EditorView{
         }
     }
 
+    /**
+     * Handle export.
+     */
     @FXML
     void handleExport(){
         try{
@@ -123,6 +153,9 @@ public class EditorView{
         }
     }
 
+    /**
+     * Handle to pdf.
+     */
     @FXML
     void handleToPdf(){
         FileChooser fileChooser = new FileChooser();

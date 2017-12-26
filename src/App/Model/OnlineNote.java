@@ -10,17 +10,30 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 
-
+/**
+ * The type Online note.
+ */
 public class OnlineNote extends Note{
     private String gistId;
     private String fileUrl;
 
+    /**
+     * Instantiates a new Online note.
+     *
+     * @param gist the gist
+     * @throws MalformedURLException the malformed url exception
+     */
     public OnlineNote(Gist gist)throws MalformedURLException{
         super(GistUtil.getFileNameByGist(gist), new URL(gist.getUrl()));
         this.gistId = gist.getId();
         this.fileUrl = GistUtil.getFileRawUrlByGist(gist);
     }
 
+    /**
+     * Get gist id string.
+     *
+     * @return the string
+     */
     public String getGistId(){
         return gistId;
     }

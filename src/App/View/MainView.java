@@ -26,6 +26,9 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 
+/**
+ * The type Main view.
+ */
 public class MainView{
     @FXML
     private TableView<Note> noteTable;
@@ -37,10 +40,18 @@ public class MainView{
     private Stage primaryStage;
     private Client client;
 
+    /**
+     * Set primary stage.
+     *
+     * @param primaryStage the primary stage
+     */
     public void setPrimaryStage(Stage primaryStage){
         this.primaryStage = primaryStage;
     }
 
+    /**
+     * Initialize.
+     */
     public void initialize(){
 
         fileNameColumn.setCellValueFactory(param -> param.getValue().fileNameProperty());
@@ -61,6 +72,11 @@ public class MainView{
         });
     }
 
+    /**
+     * Set client.
+     *
+     * @param client the client
+     */
     public void setClient(Client client){
         this.client = client;
         client.getNoteMap().addListener(new MapChangeListener<String, Note>(){

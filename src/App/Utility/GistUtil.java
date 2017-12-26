@@ -11,7 +11,17 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * The type Gist util.
+ */
 public class GistUtil{
+    /**
+     * Fetch gist by id.
+     *
+     * @param gistId the gist id
+     * @param client the client
+     * @throws IOException the io exception
+     */
     public static void fetchGistById(String gistId, Client client) throws IOException{
         GistService gistService = new GistService();
         gistService.getClient().setCredentials(client.getCredential().getUser(), client.getCredential().getPassword());
@@ -21,6 +31,12 @@ public class GistUtil{
         client.getNoteMap().put(newNote.getUrl(), newNote);
     }
 
+    /**
+     * Fetch gist by user.
+     *
+     * @param client the client
+     * @throws IOException the io exception
+     */
     public static void fetchGistByUser(Client client)throws IOException{
         GistService gistService = new GistService();
         gistService.getClient().setCredentials(client.getCredential().getUser(), client.getCredential().getPassword());
@@ -32,6 +48,15 @@ public class GistUtil{
         }
     }
 
+    /**
+     * Create new gist gist.
+     *
+     * @param client   the client
+     * @param fileName the file name
+     * @param content  the content
+     * @return the gist
+     * @throws IOException the io exception
+     */
     public static Gist createNewGist(Client client, String fileName, String content)throws IOException{
         GistService gistService = new GistService();
         gistService.getClient().setCredentials(client.getCredential().getUser(), client.getCredential().getPassword());
@@ -48,6 +73,16 @@ public class GistUtil{
         return gistService.createGist(localGist);
     }
 
+    /**
+     * Update gist gist.
+     *
+     * @param client   the client
+     * @param fileName the file name
+     * @param content  the content
+     * @param gistId   the gist id
+     * @return the gist
+     * @throws IOException the io exception
+     */
     public static Gist updateGist(Client client, String fileName, String content, String gistId)throws IOException{
         GistService gistService = new GistService();
         gistService.getClient().setCredentials(client.getCredential().getUser(), client.getCredential().getPassword());
@@ -65,11 +100,23 @@ public class GistUtil{
         return gistService.updateGist(localGist);
     }
 
+    /**
+     * Get file name by gist string.
+     *
+     * @param gist the gist
+     * @return the string
+     */
     public static String getFileNameByGist(Gist gist){
         GistFile gistFile = (GistFile)gist.getFiles().values().toArray()[0];
         return gistFile.getFilename();
     }
 
+    /**
+     * Get file raw url by gist string.
+     *
+     * @param gist the gist
+     * @return the string
+     */
     public static String getFileRawUrlByGist(Gist gist){
         GistFile gistFile = (GistFile)gist.getFiles().values().toArray()[0];
         return gistFile.getRawUrl();

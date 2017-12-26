@@ -13,7 +13,16 @@ import javafx.stage.Window;
 
 import java.io.IOException;
 
+/**
+ * The type Window util.
+ */
 public class WindowUtil{
+    /**
+     * Show notify dialog.
+     *
+     * @param owner        the owner
+     * @param notification the notification
+     */
     public static void showNotifyDialog(Window owner, String notification){
         Label notifyLabel = new Label(notification);
 
@@ -24,6 +33,14 @@ public class WindowUtil{
         dialogStage.show();
     }
 
+    /**
+     * Show confirm dialog.
+     *
+     * @param owner                the owner
+     * @param msg                  the msg
+     * @param okClickedHandler     the ok clicked handler
+     * @param cancelClickedHandler the cancel clicked handler
+     */
     public static void showConfirmDialog(Window owner, String msg,
                     EventHandler<ActionEvent> okClickedHandler, EventHandler<ActionEvent> cancelClickedHandler){
 
@@ -48,6 +65,14 @@ public class WindowUtil{
         dialogStage.show();
     }
 
+    /**
+     * Show input dialog.
+     *
+     * @param owner       the owner
+     * @param initText    the init text
+     * @param title       the title
+     * @param textHandler the text handler
+     */
     public static void showInputDialog(Window owner, String initText, String title, TextHandler textHandler){
         TextField textField = new TextField(initText);
         Button okButton = new Button("OK");

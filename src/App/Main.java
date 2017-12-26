@@ -11,8 +11,16 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.HashMap;
 
+/**
+ * The type Main.
+ */
 public class Main extends Application{
 
+    /**
+     * Main. The entry point.
+     *
+     * @param args the args
+     */
     public static void main(String[] args){
         launch(args);
     }
