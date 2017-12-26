@@ -1,9 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
 /.idea/
+/doc/*.pdf
+/lib/
 /out/production/
 /out/artifacts/Miki_Cloud_Note_jar/wkhtmltopdf/
-/lib/
-/Miki-Cloud-Note.iml
-/doc/*.pdf
-/wkhtmltopdf/
 /videoDemo/
+/wkhtmltopdf/
+/Miki-Cloud-Note.iml
