@@ -7,6 +7,7 @@ import javafx.collections.ObservableMap;
 
 /**
  * The type Client.
+ * Containing github credentials and the notes.
  */
 public class Client{
     private ObservableMap<String, Note> noteMap;

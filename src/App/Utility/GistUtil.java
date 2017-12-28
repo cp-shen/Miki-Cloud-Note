@@ -49,7 +49,7 @@ public class GistUtil{
     }
 
     /**
-     * Create new gist gist.
+     * Create new gist.
      *
      * @param client   the client
      * @param fileName the file name
@@ -74,7 +74,7 @@ public class GistUtil{
     }
 
     /**
-     * Update gist gist.
+     * Update gist.
      *
      * @param client   the client
      * @param fileName the file name
@@ -101,7 +101,7 @@ public class GistUtil{
     }
 
     /**
-     * Get file name by gist string.
+     * Get file name string by gist.
      *
      * @param gist the gist
      * @return the string
